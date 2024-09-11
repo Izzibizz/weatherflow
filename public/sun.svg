@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 383.4 386.07">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Namnlös_övertoning_197-13);
+        stroke: url(#Namnlös_övertoning_193-13);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16 {
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        fill: url(#Namnlös_övertoning_197-3);
+        stroke: url(#Namnlös_övertoning_193-2);
+      }
+
+      .cls-3 {
+        fill: url(#Namnlös_övertoning_197-15);
+        stroke: url(#Namnlös_övertoning_193-15);
+      }
+
+      .cls-4 {
+        fill: url(#Namnlös_övertoning_197-10);
+        stroke: url(#Namnlös_övertoning_193-9);
+      }
+
+      .cls-5 {
+        fill: url(#Namnlös_övertoning_197-2);
+        stroke: url(#Namnlös_övertoning_193);
+      }
+
+      .cls-17 {
+        fill: url(#Namnlös_övertoning_90);
+        stroke-width: 0px;
+      }
+
+      .cls-6 {
+        fill: url(#Namnlös_övertoning_197);
+        stroke: url(#Namnlös_övertoning_195);
+      }
+
+      .cls-7 {
+        fill: url(#Namnlös_övertoning_197-5);
+        stroke: url(#Namnlös_övertoning_193-4);
+      }
+
+      .cls-8 {
+        fill: url(#Namnlös_övertoning_197-14);
+        stroke: url(#Namnlös_övertoning_193-14);
+      }
+
+      .cls-9 {
+        fill: url(#Namnlös_övertoning_197-8);
+        stroke: url(#Namnlös_övertoning_193-7);
+      }
+
+      .cls-10 {
+        fill: url(#Namnlös_övertoning_197-4);
+        stroke: url(#Namnlös_övertoning_193-3);
+      }
+
+      .cls-11 {
+        fill: url(#Namnlös_övertoning_197-7);
+        stroke: url(#Namnlös_övertoning_193-6);
+      }
+
+      .cls-12 {
+        fill: url(#Namnlös_övertoning_199);
+        stroke: url(#Namnlös_övertoning_193-11);
+      }
+
+      .cls-13 {
+        fill: url(#Namnlös_övertoning_197-12);
+        stroke: url(#Namnlös_övertoning_193-12);
+      }
+
+      .cls-14 {
+        fill: url(#Namnlös_övertoning_197-6);
+        stroke: url(#Namnlös_övertoning_193-5);
+      }
+
+      .cls-15 {
+        fill: url(#Namnlös_övertoning_197-11);
+        stroke: url(#Namnlös_övertoning_193-10);
+      }
+
+      .cls-16 {
+        fill: url(#Namnlös_övertoning_197-9);
+        stroke: url(#Namnlös_övertoning_193-8);
+      }
+    </style>
+    <linearGradient id="Namnlös_övertoning_90" data-name="Namnlös övertoning 90" x1="88.25" y1="194.75" x2="296.25" y2="194.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd047"/>
+      <stop offset=".52" stop-color="#f39041"/>
+      <stop offset="1" stop-color="#e6284e"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_197" data-name="Namnlös övertoning 197" x1="248.5" y1="94.93" x2="294.84" y2="94.93" gradientTransform="translate(575.73 160.14) rotate(177.38) skewX(.48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f28c1b"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_195" data-name="Namnlös övertoning 195" x1="244.96" y1="94.93" x2="298.37" y2="94.93" gradientTransform="translate(575.73 160.14) rotate(177.38) skewX(.48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f28c1b"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_197-2" data-name="Namnlös övertoning 197" x1="214.48" y1="53.27" x2="260.82" y2="53.27" gradientTransform="translate(541.27 269.92) rotate(-157.98) skewX(1.07)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193" data-name="Namnlös övertoning 193" x1="210.95" y1="53.27" x2="264.36" y2="53.27" gradientTransform="translate(541.27 269.92) rotate(-157.98) skewX(1.07)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f28c1b"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_197-3" data-name="Namnlös övertoning 197" x1="196.6" y1="6.4" x2="242.94" y2="6.4" gradientTransform="translate(509.5 354.18) rotate(-136.94) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-2" data-name="Namnlös övertoning 193" x1="193.06" y1="6.4" x2="246.47" y2="6.4" gradientTransform="translate(509.5 354.18) rotate(-136.94) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-4" data-name="Namnlös övertoning 197" x1="158.62" y1="-39.55" x2="204.96" y2="-39.55" gradientTransform="translate(456.4 414.21) rotate(-115.22) scale(1.04) skewX(-4.42)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-3" data-name="Namnlös övertoning 193" x1="155.08" y1="-39.55" x2="208.5" y2="-39.55" gradientTransform="translate(456.4 414.21) rotate(-115.22) scale(1.04) skewX(-4.42)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-5" data-name="Namnlös övertoning 197" x1="137.45" y1="-92.59" x2="183.79" y2="-92.59" gradientTransform="translate(405.02 476.61) rotate(-91.76) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-4" data-name="Namnlös övertoning 193" x1="133.91" y1="-92.59" x2="187.32" y2="-92.59" gradientTransform="translate(405.02 476.61) rotate(-91.76) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-6" data-name="Namnlös övertoning 197" x1="153.03" y1="-152.51" x2="199.37" y2="-152.51" gradientTransform="translate(328.37 578.05) rotate(-67.68) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-5" data-name="Namnlös övertoning 193" x1="149.49" y1="-152.51" x2="202.9" y2="-152.51" gradientTransform="translate(328.37 578.05) rotate(-67.68) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-7" data-name="Namnlös övertoning 197" x1="224.36" y1="10.34" x2="270.7" y2="10.34" gradientTransform="translate(10.46 530.15) rotate(-46.94) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-6" data-name="Namnlös övertoning 193" x1="220.82" y1="10.34" x2="274.24" y2="10.34" gradientTransform="translate(10.46 530.15) rotate(-46.94) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-8" data-name="Namnlös övertoning 197" x1="197.01" y1="-18.2" x2="243.35" y2="-18.2" gradientTransform="translate(333.52 -144.86) rotate(133.06) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-7" data-name="Namnlös övertoning 193" x1="193.48" y1="-18.2" x2="246.89" y2="-18.2" gradientTransform="translate(333.52 -144.86) rotate(133.06) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-9" data-name="Namnlös övertoning 197" x1="161.16" y1="-60.49" x2="207.5" y2="-60.49" gradientTransform="translate(383.4 -106.73) rotate(150.36) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-8" data-name="Namnlös övertoning 193" x1="157.62" y1="-60.49" x2="211.03" y2="-60.49" gradientTransform="translate(383.4 -106.73) rotate(150.36) scale(1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-10" data-name="Namnlös övertoning 197" x1="283.09" y1="95.26" x2="329.43" y2="95.26" gradientTransform="translate(-226.76 160.14) rotate(2.62) scale(1 -1) skewX(.48)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-9" data-name="Namnlös övertoning 193" x1="279.55" y1="95.26" x2="332.96" y2="95.26" gradientTransform="translate(-226.76 160.14) rotate(2.62) scale(1 -1) skewX(.48)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-11" data-name="Namnlös övertoning 197" x1="246.49" y1="39.07" x2="292.83" y2="39.07" gradientTransform="translate(-192.3 269.92) rotate(-22.02) scale(.99 -.99) skewX(1.07)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-10" data-name="Namnlös övertoning 193" x1="242.96" y1="39.07" x2="296.37" y2="39.07" gradientTransform="translate(-192.3 269.92) rotate(-22.02) scale(.99 -.99) skewX(1.07)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_199" data-name="Namnlös övertoning 199" x1="218.68" y1="-17.3" x2="265.02" y2="-17.3" gradientTransform="translate(-160.53 354.18) rotate(-43.06) scale(1.03 -1.03) skewX(-3.52)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f28c1b"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_193-11" data-name="Namnlös övertoning 193" x1="215.15" y1="-17.3" x2="268.56" y2="-17.3" gradientTransform="translate(-160.53 354.18) rotate(-43.06) scale(1.03 -1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-12" data-name="Namnlös övertoning 197" x1="169.27" y1="-70.07" x2="215.61" y2="-70.07" gradientTransform="translate(-107.43 414.21) rotate(-64.78) scale(1.04 -1.04) skewX(-4.42)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-12" data-name="Namnlös övertoning 193" x1="165.73" y1="-70.07" x2="219.14" y2="-70.07" gradientTransform="translate(-107.43 414.21) rotate(-64.78) scale(1.04 -1.04) skewX(-4.42)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-13" data-name="Namnlös övertoning 197" x1="135.21" y1="-126.03" x2="181.55" y2="-126.03" gradientTransform="translate(-56.05 476.61) rotate(-88.24) scale(1.03 -1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-13" data-name="Namnlös övertoning 193" x1="131.67" y1="-126.03" x2="185.08" y2="-126.03" gradientTransform="translate(-56.05 476.61) rotate(-88.24) scale(1.03 -1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-14" data-name="Namnlös övertoning 197" x1="137.37" y1="-182.97" x2="183.71" y2="-182.97" gradientTransform="translate(20.6 578.05) rotate(-112.32) scale(1.03 -1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-14" data-name="Namnlös övertoning 193" x1="133.83" y1="-182.97" x2="187.24" y2="-182.97" gradientTransform="translate(20.6 578.05) rotate(-112.32) scale(1.03 -1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+    <linearGradient id="Namnlös_övertoning_197-15" data-name="Namnlös övertoning 197" x1="191.7" y1="-45.01" x2="238.04" y2="-45.01" gradientTransform="translate(-34.43 -106.73) rotate(29.64) scale(1.03 -1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_197"/>
+    <linearGradient id="Namnlös_övertoning_193-15" data-name="Namnlös övertoning 193" x1="188.16" y1="-45.01" x2="241.58" y2="-45.01" gradientTransform="translate(-34.43 -106.73) rotate(29.64) scale(1.03 -1.03) skewX(-3.52)" xlink:href="#Namnlös_övertoning_193"/>
+  </defs>
+  <circle class="cls-17" cx="192.25" cy="194.75" r="104"/>
+  <line class="cls-6" x1="322.15" y1="54.04" x2="278.55" y2="102.23"/>
+  <line class="cls-5" x1="371.36" y1="119.5" x2="312.38" y2="145.16"/>
+  <line class="cls-2" x1="383.38" y1="194.64" x2="313.68" y2="194.86"/>
+  <line class="cls-10" x1="370.1" y1="270.87" x2="304.44" y2="244.35"/>
+  <line class="cls-7" x1="329.03" y1="332.58" x2="279.74" y2="283.3"/>
+  <line class="cls-14" x1="268.2" y1="373.7" x2="243.32" y2="308.59"/>
+  <line class="cls-11" x1="192.36" y1="386.05" x2="192.14" y2="316.35"/>
+  <line class="cls-9" x1="191.15" y1=".02" x2="191.37" y2="69.72"/>
+  <line class="cls-16" x1="255.76" y1="10.13" x2="235.23" y2="76.75"/>
+  <line class="cls-4" x1="61.25" y1="55.29" x2="104.85" y2="103.48"/>
+  <line class="cls-15" x1="12.04" y1="120.75" x2="71.02" y2="146.41"/>
+  <line class="cls-12" x1=".02" y1="195.89" x2="69.72" y2="196.11"/>
+  <line class="cls-13" x1="13.3" y1="272.12" x2="78.96" y2="245.6"/>
+  <line class="cls-1" x1="54.37" y1="333.83" x2="103.66" y2="284.55"/>
+  <line class="cls-8" x1="115.2" y1="374.95" x2="140.08" y2="309.84"/>
+  <line class="cls-3" x1="127.64" y1="11.38" x2="148.17" y2="78"/>
+</svg>
