@@ -4,7 +4,6 @@ import { useState } from "react"
 export const Searchbar = () => {
   
   const { fetchForecast, setUserLocation, userLocation } = useForecastStore()
-  const [ isTyping, setIsTyping ] = useState(false)
   const [ cityInput, setCityInput ] = useState("")
 
   const handleCityInput = (e) => {
@@ -20,12 +19,11 @@ export const Searchbar = () => {
   };
 
   return (
-    <form onSubmit={handleSearch} className="w-5/6 border h-12 p-2 border-red rounded-xl flex align-center bg-white">
+    <form onSubmit={handleSearch} className=" w-11/12 border h-12 p-2 border-red rounded-xl flex align-center bg-white">
     <input
       type="text"
       value={cityInput}
       onChange={handleCityInput}
-      onBlur={() => setIsTyping(false)}
       className="w-[85%] focus:outline-none overflow-hidden text-ellipsis whitespace-nowrap pl-2"
       placeholder="Search location"
     />
