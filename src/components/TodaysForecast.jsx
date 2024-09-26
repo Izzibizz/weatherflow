@@ -50,9 +50,9 @@ export const TodaysForecast = () => {
 
   const textColorByWeather = () => {
     if (weatherNow) {
-      if (weatherNow.includes("clear")) return "text-black"; // Example color for clear weather
+      if (weatherNow.includes("clear")) return "text-white"; // Example color for clear weather
       if (weatherNow === "few clouds" || weatherNow === "scattered clouds") return "text-darkBlue"; // Example color for cloudy weather
-      if (weatherNow.includes("clouds")) return "text-gray-700"; // Example color for overcast
+      if (weatherNow.includes("clouds")) return "text-gray-800"; // Example color for overcast
       if (weatherNow.includes("rain")) return "text-lightBlue"; // Example color for rain
       // Add more conditions for other weather types as needed
     }
@@ -75,15 +75,15 @@ export const TodaysForecast = () => {
      muted
      loop
      src={videoByWeather()} />
-<div className={`h-fit z-30 mt-[180px] tablet:mt-[140px] p-8 flex justify-between w-full ${textColorByWeather()}`}>
-  <div className="flex flex-col uppercase">
-      <h2 className={`text-[60px] flex pb-2  font-heading transition-all duration-500 ease-in-out ${extentionIsVisible && "text-white"} tracking-wider ml-2`}>{temperatureNow}<span className="text-[30px] ">°C</span></h2>
-      <div className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${extentionIsVisible && "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"} `}>
-      <h3 className="font-body font-bold ">{weatherNow}</h3>
-      <p className="font-body">{city}</p>
+<div className={`h-fit z-30 mt-[180px] tablet:mt-[140px] px-8 flex justify-between w-full ${textColorByWeather()}`}>
+  <div className="flex flex-col uppercase justify-between">
+      <h2 className={` flex pb-2  font-heading transition-all duration-500 ease-in-out drop-shadow-xl ${extentionIsVisible ? "ml-2 text-[70px]" : "text-[60px]"} tracking-wider `}>{temperatureNow}<span className="text-[30px] ">°C</span></h2>
+      <div className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${extentionIsVisible && "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"} `}>
+      <h3 className="font-body font-bold drop-shadow-xl ">{weatherNow}</h3>
+      <p className="font-body text-sm drop-shadow-xl">{city}</p>
       </div>
       </div>
-      <div className="flex flex-col justify-between items-end">
+      <div className="flex flex-col items-center justify-between ">
       <Lottie
             animationData={animationByWeather()}
             loop
@@ -94,9 +94,9 @@ export const TodaysForecast = () => {
               transition: "width 0.5s ease, height 0.5s ease"
             }}
           />
-          <div className={`flex gap-2 w-fit transition-all duration-500 ease-in-out ${extentionIsVisible && "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"}`}>
-            <p>H: {maxTemp}<span className="text-[10px] ">°C</span></p>
-            <p>L: {minTemp}<span className="text-[10px] ">°C</span></p>
+          <div className={`flex items-end gap-2 w-fit transition-all duration-500 ease-in-out ${extentionIsVisible && "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white drop-shadow-xl"}`}>
+            <p>H: {maxTemp}<span className="text-[10px] align-super">°C</span></p> <span className="text-2xl">|</span>
+            <p>L: {minTemp}<span className="text-[10px] align-super">°C</span></p>
           </div>
           </div>
       </div>
@@ -120,7 +120,7 @@ export const TodaysForecast = () => {
   />
   </div>
   
-    <div className={`${extentionIsVisible ? "opacity-100 visible" : "opacity-0 invisible"} z-30 transition-opacity duration-1000 ease-in-out p-4 mx-8 font-heading text-white bg-darkBlue bg-opacity-20 rounded-xl`}>
+    <div className={`${extentionIsVisible ? "opacity-100 visible" : "opacity-0 invisible"} z-30 transition-opacity duration-1000 ease-in-out p-4 mx-8 font-heading text-white bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl`}>
       <p>Sunrise: {timeSunrise}</p>
       <p>Sunset: {timeSunset}</p>
 </div>
