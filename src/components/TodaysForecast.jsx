@@ -14,8 +14,8 @@ export const TodaysForecast = () => {
   //weather virables
   const weatherNow = forecastData?.[0]?.weather?.[0]?.description
   const temperatureNow = Math.round(forecastData?.[0]?.main?.temp)
-  const minTemp = Math.round(forecastData?.[0].main.temp_min)
-  const maxTemp = Math.round(forecastData?.[0].main.temp_max)
+  const minTemp = Math.round(forecastData?.[0]?.main?.temp_min)
+  const maxTemp = Math.round(forecastData?.[0]?.main?.temp_max)
   const timeSunrise = new Date(sunrise * 1000).toLocaleTimeString([], {
     hour: '2-digit',
     minute: '2-digit',
@@ -50,7 +50,7 @@ export const TodaysForecast = () => {
 
   const textColorByWeather = () => {
     if (weatherNow) {
-      if (weatherNow.includes("clear")) return "text-yellow-500"; // Example color for clear weather
+      if (weatherNow.includes("clear")) return "text-black"; // Example color for clear weather
       if (weatherNow === "few clouds" || weatherNow === "scattered clouds") return "text-darkBlue"; // Example color for cloudy weather
       if (weatherNow.includes("clouds")) return "text-gray-700"; // Example color for overcast
       if (weatherNow.includes("rain")) return "text-lightBlue"; // Example color for rain
