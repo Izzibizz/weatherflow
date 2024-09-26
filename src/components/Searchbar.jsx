@@ -18,16 +18,20 @@ export const Searchbar = () => {
     console.log(userLocation)
   };
 
+
+
   return (
-    <form onSubmit={handleSearch} className=" w-11/12 border h-12 p-2 border-red rounded-xl flex align-center bg-white">
+    <form onSubmit={handleSearch} className=" w-11/12 h-12 p-2 rounded-xl flex align-center bg-white">
     <input
       type="text"
       value={cityInput}
       onChange={handleCityInput}
-      className="w-[85%] focus:outline-none overflow-hidden text-ellipsis whitespace-nowrap pl-2"
+      className="w-[85%] font-body text-blue text-sm focus:outline-none overflow-hidden text-ellipsis whitespace-nowrap pl-2"
       placeholder="Search location"
     />
-    <button type="submit">
+    <button type="submit" disabled={!cityInput} className={`w-[15%] flex justify-center items-center ${
+          !cityInput ? "opacity-40 cursor-not-allowed" : "hover:scale-110"
+        }`}>
       <img src="/search.svg" className="w-6 h-6 hover:scale-110" alt="search icon" />
     </button>
   </form>

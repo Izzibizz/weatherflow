@@ -6,8 +6,8 @@ export const useForecastStore = create((set) => ({
     forecastData: [],
     city: "",
     country: "",
-    sunrise: null,
-    sunset: null,
+    sunrise: "",
+    sunset: "",
     userLocation: {},
     extentionIsVisible: false,
 

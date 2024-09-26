@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        phone: "390px",
         tablet: "600px", 
         laptop: "1025px", 
         desktop: "1300px", 
@@ -15,9 +16,17 @@ export default {
       {
         'iphone': "url('/iphone-frame.png')",
       },
+      colors: {
+        lightBlue: "#B8D3E9",
+        blue: "#9AA7CC",
+        darkBlue: "#0B487A",
+        black: "#222222",
+        white: "#FFFDFA",
+        orange: "#FFAE00"
+      },
       fontFamily: {
-        body: ["Raleway", "sans-serif"],
-        heading: ["Michroma", "sans-serif"],
+        body: ["Manrope", "sans-serif"],
+        heading: ["Anton", "sans-serif"],
       },
       keyframes: {
         fadeIn: {
