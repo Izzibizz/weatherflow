@@ -169,7 +169,7 @@ export const TodaysForecast = () => {
         className={`hover:scale-125 hover:cursor-pointer absolute z-40 left-8 flex justify-center items-center transform  transition-all duration-500 ease-in-out fadeIn
      flex ${
        extentionIsVisible
-         ? " top-[85%] phone:top-[90%] "
+         ? " top-[83%] tablet:top-[90%] "
          : "top-[380px] phone:top-[430px] tablet:top-[355px]"
      }`}
       >
