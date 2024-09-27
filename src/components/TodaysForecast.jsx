@@ -1,129 +1,232 @@
-import { useForecastStore } from "../stores/useForecastStore"
+import { useForecastStore } from "../stores/useForecastStore";
 import Lottie from "lottie-react";
 import { SlArrowDown } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
-import sunAnimation from "../assets/Animation-sun.json"
-import cloudAnimation from "../assets/Animation-cloud.json"
-import sunCloudAnimation from "../assets/Animation-sunCloud.json"
-import rainAnimation from "../assets/Animation-rain.json"
+import sunAnimation from "../assets/Animation-sun.json";
+import cloudAnimation from "../assets/Animation-cloud.json";
+import sunCloudAnimation from "../assets/Animation-sunCloud.json";
+import rainAnimation from "../assets/Animation-rain.json";
 
 export const TodaysForecast = () => {
-
-  const { forecastData, city, extentionIsVisible, setExtentionIsVisible, sunrise, sunset } = useForecastStore()
+  const {
+    forecastData,
+    city,
+    extentionIsVisible,
+    setExtentionIsVisible,
+    sunrise,
+    sunset,
+  } = useForecastStore();
 
   //weather virables
-  const weatherNow = forecastData?.[0]?.weather?.[0]?.description
-  const temperatureNow = Math.round(forecastData?.[0]?.main?.temp)
-  const minTemp = Math.round(forecastData?.[0]?.main?.temp_min)
-  const maxTemp = Math.round(forecastData?.[0]?.main?.temp_max)
+  const weatherNow = forecastData?.[0]?.weather?.[0]?.description;
+  const temperatureNow = Math.round(forecastData?.[0]?.main?.temp);
+  const minTemp = Math.round(forecastData?.[0]?.main?.temp_min);
+  const maxTemp = Math.round(forecastData?.[0]?.main?.temp_max);
   const timeSunrise = new Date(sunrise * 1000).toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-  })
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   const timeSunset = new Date(sunset * 1000).toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-  })
-  
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const humidity = forecastData?.[0]?.main?.humidity
+  const clouds = forecastData?.[0]?.clouds?.all
+  const windGust = forecastData?.[0]?.wind?.gust
+  const windSpeed = forecastData?.[0]?.wind?.speed
+  const visibility = (forecastData?.[0]?.visibility / 1000)
+
+  const viewIsClear = visibility > 7
+  const foggy = visibility < 4
+
+
   const videoByWeather = () => {
     if (weatherNow) {
-      if (weatherNow === "few clouds") return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146428/little-clouds_ne5eaw.mp4";
-      else if (weatherNow === "scattered clouds") return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146429/scattered-clouds_hymr9l.mp4";
-      else if (weatherNow?.includes("clouds")) return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146427/broken-clouds_yabiso.mp4"; 
-      else if (weatherNow?.includes("clear")) return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146442/clear_bpyvlj.mp4";
-      else if (weatherNow?.includes("thunderstorm")) return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146452/rain-thunder_pwnr4q.mov";
-      else if (weatherNow?.includes("rain")) return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146440/rain_wgjndm.mov";
+      if (weatherNow === "few clouds")
+        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146428/little-clouds_ne5eaw.mp4";
+      else if (weatherNow === "scattered clouds")
+        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146429/scattered-clouds_hymr9l.mp4";
+      else if (weatherNow?.includes("clouds"))
+        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146427/broken-clouds_yabiso.mp4";
+      else if (weatherNow?.includes("clear"))
+        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146442/clear_bpyvlj.mp4";
+      else if (weatherNow?.includes("thunderstorm"))
+        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146452/rain-thunder_pwnr4q.mov";
+      else if (weatherNow?.includes("rain"))
+        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146440/rain_wgjndm.mov";
     }
     return "/clear.mp4";
   };
-  
 
   const animationByWeather = () => {
     if (weatherNow) {
       if (weatherNow.includes("clear")) return sunAnimation;
-      else if (weatherNow === "few clouds" || weatherNow === "scattered clouds") return sunCloudAnimation;
+      else if (weatherNow === "few clouds" || weatherNow === "scattered clouds")
+        return sunCloudAnimation;
       else if (weatherNow.includes("clouds")) return cloudAnimation;
       else if (weatherNow.includes("rain")) return rainAnimation;
     }
-    return sunAnimation; 
+    return sunAnimation;
   };
 
   const textColorByWeather = () => {
     if (weatherNow) {
       if (weatherNow.includes("clear")) return "text-white"; // Example color for clear weather
-      if (weatherNow === "few clouds" || weatherNow === "scattered clouds") return "text-darkBlue"; // Example color for cloudy weather
+      if (weatherNow === "few clouds" || weatherNow === "scattered clouds")
+        return "text-darkBlue"; // Example color for cloudy weather
       if (weatherNow.includes("clouds")) return "text-gray-800"; // Example color for overcast
       if (weatherNow.includes("rain")) return "text-lightBlue"; // Example color for rain
       // Add more conditions for other weather types as needed
     }
     return "text-darkBlue"; // Default text color
   };
-  
-
 
   const handleArrowClick = () => {
-    setExtentionIsVisible(!extentionIsVisible)
-  }
+    setExtentionIsVisible(!extentionIsVisible);
+  };
 
-  console.log(forecastData)
-
+  console.log(forecastData);
 
   return (
-    <div className={`${extentionIsVisible ? " h-screen tablet:h-[734px] tablet:rounded-b-[2.4rem]" : "h-[400px] phone:h-[450px] tablet:h-[384px]"} gap-20 flex flex-col relative z-20 transform transition-all duration-500 ease-in-out fadeIn `}>
-    <video className={`${extentionIsVisible ? " tablet:rounded-b-[2.4rem]" : "tablet:rounded-b-none"} h-full object-cover w-full transform transition-all absolute z-10  duration-500 ease-in-out fadeIn tablet:rounded-t-[2.4rem] `} 
-     autoPlay
-     muted
-     loop
-     src={videoByWeather()} />
-<div className={`h-fit z-30 mt-[180px] tablet:mt-[140px] px-8 flex justify-between w-full ${textColorByWeather()}`}>
-  <div className="flex flex-col uppercase justify-between">
-      <h2 className={` flex pb-2  font-heading transition-all duration-500 ease-in-out drop-shadow-xl ${extentionIsVisible ? "ml-2 text-[70px]" : "text-[60px]"} tracking-wider `}>{temperatureNow}<span className="text-[30px] ">°C</span></h2>
-      <div className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${extentionIsVisible && "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"} `}>
-      <h3 className="font-body font-bold drop-shadow-xl ">{weatherNow}</h3>
-      <p className="font-body text-sm drop-shadow-xl">{city}</p>
-      </div>
-      </div>
-      <div className="flex flex-col items-center justify-between ">
-      <Lottie
+    <div
+      className={`${
+        extentionIsVisible
+          ? "h-screen tablet:h-[734px] tablet:rounded-b-[2.4rem]"
+          : "h-[400px] phone:h-[450px] tablet:h-[384px]"
+      } gap-4 flex flex-col relative z-20 transform transition-all duration-500 ease-in-out fadeIn `}
+    >
+      <video
+        className={`${
+          extentionIsVisible
+            ? " tablet:rounded-b-[2.4rem]"
+            : "tablet:rounded-b-none"
+        } h-full object-cover w-full transform transition-all absolute z-10  duration-500 ease-in-out fadeIn tablet:rounded-t-[2.4rem] `}
+        autoPlay
+        muted
+        loop
+        src={videoByWeather()}
+      />
+      <div
+        className={`h-fit z-30 mt-[130px] ${
+          extentionIsVisible ? "px-8" : "px-12"
+        } transition-all duration-500 ease-in-out flex justify-between w-full ${textColorByWeather()}`}
+      >
+        <div className="flex flex-col  justify-between">
+          <h2
+            className={` flex pb-2  font-heading transition-all duration-500 ease-in-out drop-shadow-xl ${
+              extentionIsVisible ? "ml-2 text-[70px]" : "text-[60px]"
+            } tracking-wider `}
+          >
+            {temperatureNow}
+            <span className="text-[30px] ">°C</span>
+          </h2>
+          <div
+            className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
+              extentionIsVisible &&
+              "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
+            } `}
+          >
+            <h3 className="font-body font-bold drop-shadow-xl uppercase ">
+              {weatherNow}
+            </h3>
+            <p className="font-body text-sm drop-shadow-xl">{city}</p>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-between">
+          <Lottie
             animationData={animationByWeather()}
             loop
             autoPlay
             style={{
-              width: extentionIsVisible ? 150 : 100, 
+              width: extentionIsVisible ? 150 : 100,
               height: extentionIsVisible ? 150 : 100,
-              transition: "width 0.5s ease, height 0.5s ease"
+              transition: "width 0.5s ease, height 0.5s ease",
             }}
+            className={`${
+              weatherNow?.includes("rain") && "transform scale-x-[-1]"
+            }`}
           />
-          <div className={`flex items-end gap-2 w-fit transition-all duration-500 ease-in-out ${extentionIsVisible && "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white drop-shadow-xl"}`}>
-            <p>H: {maxTemp}<span className="text-[10px] align-super">°C</span></p> <span className="text-2xl">|</span>
-            <p>L: {minTemp}<span className="text-[10px] align-super">°C</span></p>
+          <div
+            className={`flex items-center gap-2 w-fit transition-all duration-500 justify-center ease-in-out ${
+              extentionIsVisible &&
+              "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white drop-shadow-xl"
+            }`}
+          >
+            <p>
+              H: {maxTemp}
+              <span className="text-[10px] align-super">°C</span>
+            </p>{" "}
+            <div className="w-[2px] h-[30px] bg-white"></div>
+            <p>
+              L: {minTemp}
+              <span className="text-[10px] align-super">°C</span>
+            </p>
           </div>
-          </div>
+        </div>
       </div>
-    <div onClick={handleArrowClick} className={ `hover:scale-125 hover:cursor-pointer absolute z-40 left-8 flex justify-center items-center transform  transition-all duration-500 ease-in-out fadeIn
-     flex ${ extentionIsVisible ? " top-[85%] phone:top-[90%] " : "top-[380px] phone:top-[430px] tablet:top-[355px]"}`}
+      <div
+        onClick={handleArrowClick}
+        className={`hover:scale-125 hover:cursor-pointer absolute z-40 left-8 flex justify-center items-center transform  transition-all duration-500 ease-in-out fadeIn
+     flex ${
+       extentionIsVisible
+         ? " top-[85%] phone:top-[90%] "
+         : "top-[380px] phone:top-[430px] tablet:top-[355px]"
+     }`}
       >
-  <img
-    src="/cicrle.svg"
-    alt="circle see more"
-    className="w-14 h-14  z-50"
-  />
-  <SlArrowDown
-    className={`${
-      extentionIsVisible ? "hidden" : "flex"
-    } w-8 h-8 text-white absolute  z-50 fadeIn `}
-  />
-  <SlArrowUp
-    className={`${
-      extentionIsVisible ? "flex" : "hidden"
-    } w-8 h-8 text-white absolute z-50 fadeIn`}
-  />
-  </div>
-  
-    <div className={`${extentionIsVisible ? "opacity-100 visible" : "opacity-0 invisible"} z-30 transition-opacity duration-1000 ease-in-out p-4 mx-8 font-heading text-white bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl`}>
-      <p>Sunrise: {timeSunrise}</p>
-      <p>Sunset: {timeSunset}</p>
-</div>
- </div>
-  )
-}
+        <img
+          src="/cicrle.svg"
+          alt="circle see more"
+          className="w-10 h-10 tablet:w-14 tablet:h-14  z-50"
+        />
+        <SlArrowDown
+          className={`${
+            extentionIsVisible ? "hidden" : "flex"
+          } w-5 h-5 tablet:w-8 tablet:h-8 text-white absolute  z-50 fadeIn `}
+        />
+        <SlArrowUp
+          className={`${
+            extentionIsVisible ? "flex" : "hidden"
+          } w-5 h-5 tablet:w-8 tablet:h-8 text-white absolute z-50 fadeIn`}
+        />
+      </div>
+
+      <div
+        className={`${
+          extentionIsVisible ? "opacity-100 visible" : "opacity-0 invisible"
+        } z-30 flex flex-col gap-6 transition-opacity duration-1000 ease-in-out h-fit mx-8 font-body text-white`}
+      >
+        <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-full flex gap-6 p-4 text-sm justify-evenly">
+        <div className="flex flex-col">
+          <p>Sunrise: {timeSunrise}</p>
+          <p>Sunset: {timeSunset}</p>
+        </div>
+        <div className="w-[2px] bg-white"></div>
+        <div>
+      
+          <p>Humidity: {humidity} %
+          </p>
+          <p>Clouds: {clouds} %
+          </p>
+        </div>
+        </div>
+    <div className="flex justify-between text-sm">
+      <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
+        <div className="flex flex-col">
+          <h4>Wind</h4>
+          <p>Gust: {windGust} mm/s</p>
+          <p>Speed: {windSpeed} mm/s</p>
+        </div>
+        </div>
+        <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
+        <div className="flex flex-col">
+          <p>Visibility: {visibility} km</p>
+          <p>
+  The view is {viewIsClear ? "clear" : foggy ? "foggy" : "uncertain"}
+</p>
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+  );
+};

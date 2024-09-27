@@ -31,7 +31,7 @@ export const GetLocation = () => {
       <img
         src="/location2.svg"
         alt="geografic location"
-        className="w-10 h-10 hover:scale-110 drop-shadow-2xl"
+        className="w-8 h-8 hover:scale-110 drop-shadow-2xl"
       />
     </button>
   );

@@ -1,20 +1,19 @@
 import { Forecasts } from "./pages/Forecasts";
-import { Searchbar } from "./components/Searchbar";
-import { GetLocation } from "./components/GetLocation";
+
+import { Header } from "./components/Header"
 
 const App = () => {
   return (
     <div className=" w-screen min-h-screen max-w-screen h-screen bg-gradient-to-r from-[#0c1647] to-[#397495] flex flex-col justify-center items-center">
       <img src="/weatherflow-white.svg" alt="logo" className="absolute top-10 tablet:top-6 right-2 tablet:right-6 tablet:w-1/3 z-30 hidden tablet:block"/>
-      <h1 className="font-heading text-white absolute top-20 right-10 hidden tablet:block">Follow your weather flow</h1>
+      <h1 className="font-heading text-white absolute top-20 right-10 hidden tablet:block">We Follow the Flow of the weather</h1>
       <div className="w-full h-full bg-white tablet:h-[768px] tablet:w-[376px] tablet:mt-8 tablet:bg-iphone bg-cover bg-center flex flex-col tablet:p-[17px] tablet:rounded-[60px]">
-        <header className="h-16 absolute mt-20 tablet:mt-10 w-full tablet:w-fit px-8 z-50 flex gap-6 justify-between items-center">
-      < Searchbar />
-      < GetLocation />
-      </header>
+        <div className="w-full h-full relative">
+        <Header/>
       <main >
         < Forecasts />
       </main>
+      </div>
       </div>
       </div>
   );
