@@ -40,7 +40,7 @@ export default {
         },
       },
       animation: {
-        fadeIn: 'fadeIn 3s ease-out',
+        fadeIn: 'fadeIn 2s ease-out',
         fadeInOut: 'fadeInOut 3s ease-in-out infinite',
       },
     },
