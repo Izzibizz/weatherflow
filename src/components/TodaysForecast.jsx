@@ -112,6 +112,7 @@ export const TodaysForecast = () => {
         className={`h-fit z-30 mt-[130px] ${
           extentionIsVisible ? "px-8" : "px-12"
         } transition-all duration-500 ease-in-out flex justify-between w-full ${textColorByWeather()}`}
+        style={{ minHeight: "100px" }}
       >
         <div className="flex flex-col  justify-between">
           <h2
@@ -127,6 +128,7 @@ export const TodaysForecast = () => {
               extentionIsVisible &&
               "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
             } `}
+            style={{ minHeight: "50px" }}
           >
             <h3 className="font-body font-bold drop-shadow-xl uppercase ">
               {weatherNow}
@@ -153,6 +155,7 @@ export const TodaysForecast = () => {
               extentionIsVisible &&
               "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white drop-shadow-xl"
             }`}
+            style={{ minHeight: "50px" }}
           >
             <p>
               H: {maxTemp}
