@@ -1,5 +1,4 @@
 import { Forecasts } from "./pages/Forecasts";
-
 import { Header } from "./components/Header"
 
 const App = () => {

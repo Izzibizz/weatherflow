@@ -104,6 +104,8 @@ export const TodaysForecast = () => {
         autoPlay
         muted
         loop
+        playsInline
+        controls={false}
         src={videoByWeather()}
       />
       <div
