@@ -25,7 +25,7 @@ export const GetLocation = () => {
       console.log("User location updated:", userLocation);
       fetchForecast(`lat=${userLocation.latitude}&lon=${userLocation.longitude}`)
     }
-  }, [userLocation]);
+  }, [userLocation, fetchForecast]);
   return (
     <button onClick={handleGetLocation}>
       <img
