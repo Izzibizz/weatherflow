@@ -4,3 +4,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles/global.css */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for webkit browsers */
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* Optional: to allow swipe action */
+  .hide-scrollbar {
+    touch-action: pan-x; /* Allow vertical scrolling while panning horizontally */
+    overflow-x: scroll; /* Ensure horizontal scrolling is enabled */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
