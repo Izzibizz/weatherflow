@@ -115,8 +115,8 @@ export const TodaysForecast = () => {
       >
         <div className={`flex flex-col transition-all duration-500 ease-in-out font-heading`}>
           <h2
-            className={` flex pb-2 drop-shadow-xl text-[60px] tracking-wider transition-all duration-500 ease-in-out  ${
-            extentionIsVisible && "ml-4" }`}
+            className={` flex pb-2 drop-shadow-xl  tracking-wider transition-all duration-500 ease-in-out  ${
+            extentionIsVisible ? "ml-4 text-[70px]" : "text-[60px]" }`}
           >
             {temperatureNow}
             <span className="text-[30px] ">°</span>
