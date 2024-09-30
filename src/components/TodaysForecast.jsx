@@ -22,6 +22,7 @@ export const TodaysForecast = () => {
     setExtentionIsVisible,
     sunrise,
     sunset,
+    showSearchField
   } = useForecastStore();
 
   //weather virables
@@ -149,19 +150,14 @@ export const TodaysForecast = () => {
               <h3 className={`font-street tracking-widest drop-shadow-xl uppercase`}>
                 {weatherNow}
               </h3>
-              </div>
-        {/*       <div
-              className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
-                extentionIsVisible &&
-                "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
-              } `}
-            >
+              {!showSearchField && ( 
               <p className="font-street tracking-widest drop-shadow-xl">{city}</p>
-            </div> */}
+          )}
+              </div>
           </div>
           <div className="flex flex-col items-center ">
           <h2
-              className={` flex drop-shadow-xl font-heading self-end tracking-wider transition-all duration-500 ease-in-out  ${
+              className={` flex drop-shadow-xl font-heading self-end tracking-wider transform transition-all duration-500 ease-in-out  ${
                 extentionIsVisible ? "ml-4 text-[80px]" : "text-[60px]"
               }`}
             >
