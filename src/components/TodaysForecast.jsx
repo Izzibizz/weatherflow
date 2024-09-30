@@ -127,10 +127,10 @@ export const TodaysForecast = () => {
               "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
             } `}
           >
-            <h3 className="font-body font-bold drop-shadow-xl uppercase ">
+            <h3 className={`font-body font-bold drop-shadow-xl uppercase`}>
               {weatherNow}
             </h3>
-            <p className="font-body text-sm drop-shadow-xl">{city}</p>
+            <p className="font-body drop-shadow-xl">{city}</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -148,7 +148,7 @@ export const TodaysForecast = () => {
             }`}
           />
           <div
-            className={`flex items-center gap-2 w-fit transition-all duration-500 justify-center ease-in-out ${
+            className={`flex items-center gap-2 text-sm w-fit transition-all duration-500 justify-center ease-in-out ${
               extentionIsVisible &&
               "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white drop-shadow-xl"
             }`}
