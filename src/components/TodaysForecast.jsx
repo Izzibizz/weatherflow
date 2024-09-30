@@ -109,15 +109,14 @@ export const TodaysForecast = () => {
         src={videoByWeather()}
       />
       <div
-        className={`h-fit z-30  ${
+        className={`h-fit z-30 mt-[130px] ${
           extentionIsVisible ? "px-8" : "px-12"
         } transition-all duration-500 ease-in-out flex justify-between w-full ${textColorByWeather()}`}
       >
-        <div className="flex flex-col transition-all duration-500 ease-in-out">
+        <div className={`flex flex-col transition-all duration-500 ease-in-out font-heading`}>
           <h2
-            className={` flex pb-2  font-heading transition-all duration-500 ease-in-out drop-shadow-xl ${
-              extentionIsVisible ? "ml-2 text-[70px]" : "text-[60px]"
-            } tracking-wider `}
+            className={` flex pb-2 drop-shadow-xl text-[60px] tracking-wider transition-all duration-500 ease-in-out  ${
+            extentionIsVisible && "ml-4" }`}
           >
             {temperatureNow}
             <span className="text-[30px] ">°</span>
@@ -140,8 +139,8 @@ export const TodaysForecast = () => {
             loop
             autoPlay
             style={{
-              width: extentionIsVisible ? 150 : 100,
-              height: extentionIsVisible ? 150 : 100,
+              width: extentionIsVisible ? 140 : 100,
+              height: extentionIsVisible ? 140 : 100,
               transition: "width 0.5s ease, height 0.5s ease",
             }}
             className={`${
