@@ -24,7 +24,7 @@ export const Searchbar = () => {
           handleSearch();
         }
       }}
-      className={`w-fit h-10 p-2 rounded-xl flex align-center  ${
+      className={` h-10 p-2 rounded-xl flex align-center  ${
         showSearchField && "bg-white animate-fadeIn w-[230px]"
       }`}
     >
