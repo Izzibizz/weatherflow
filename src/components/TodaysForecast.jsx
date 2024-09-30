@@ -6,7 +6,6 @@ import sunAnimation from "../assets/Animation-sun.json";
 import cloudAnimation from "../assets/Animation-cloud.json";
 import sunCloudAnimation from "../assets/Animation-sunCloud.json";
 import rainAnimation from "../assets/Animation-rain.json";
-import { useSwipeable } from "react-swipeable";
 
 export const TodaysForecast = () => {
   const {
@@ -43,11 +42,6 @@ export const TodaysForecast = () => {
   //hour by hour
 
   const filteredForecast = forecastData.slice(1, 9);
-
-  const handlers = useSwipeable({
-    onSwipedLeft: () => console.log("Swiped Left!"),
-    onSwipedRight: () => console.log("Swiped Right!"),
-  });
 
   const videoByWeather = () => {
     if (weatherNow) {
@@ -175,7 +169,6 @@ export const TodaysForecast = () => {
         </div>
         <div
           className="bg-darkBlue bg-opacity-20 rounded-xl p-4 h-fit text-white drop-shadow-xl overflow-x-auto hide-scrollbar"
-          {...handlers}
         >
           <ul className="flex gap-2 ">
             {filteredForecast.map((hour, index) => {
