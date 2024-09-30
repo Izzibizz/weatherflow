@@ -5,7 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles/global.css */
+@font-face {
+  font-family: "Street";
+  src: url("../fonts/UtGuthenStreet.otf");
+}
+
 .hide-scrollbar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for webkit browsers */
   }

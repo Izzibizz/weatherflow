@@ -25,6 +25,7 @@ export default {
         orange: "#FFAE00"
       },
       fontFamily: {
+        street: ["Street", "sans-serif"],
         body: ["Manrope", "sans-serif"],
         heading: ["Anton", "sans-serif"],
       },

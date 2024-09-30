@@ -125,29 +125,8 @@ export const TodaysForecast = () => {
       >
         <div className="flex justify-between">
           <div
-            className={`flex flex-col transition-all duration-500 ease-in-out font-heading`}
+            className={`flex flex-col transition-all duration-500 ease-in-out `}
           >
-            <h2
-              className={` flex drop-shadow-xl text-[60px] tracking-wider transition-all duration-500 ease-in-out  ${
-                extentionIsVisible && "ml-4"
-              }`}
-            >
-              {temperatureNow}
-              <span className="text-[30px] ">°</span>
-            </h2>
-            <div
-              className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
-                extentionIsVisible &&
-                "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
-              } `}
-            >
-              <h3 className={`font-body font-bold drop-shadow-xl uppercase`}>
-                {weatherNow}
-              </h3>
-              <p className="font-body drop-shadow-xl">{city}</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
             <Lottie
               animationData={animationByWeather(weatherNow)}
               loop
@@ -162,16 +141,45 @@ export const TodaysForecast = () => {
               }`}
             />
             <div
+              className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
+                extentionIsVisible &&
+                "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
+              } `}
+            >
+              <h3 className={`font-street tracking-widest drop-shadow-xl uppercase`}>
+                {weatherNow}
+              </h3>
+              </div>
+        {/*       <div
+              className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
+                extentionIsVisible &&
+                "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
+              } `}
+            >
+              <p className="font-street tracking-widest drop-shadow-xl">{city}</p>
+            </div> */}
+          </div>
+          <div className="flex flex-col items-center ">
+          <h2
+              className={` flex drop-shadow-xl font-heading self-end tracking-wider transition-all duration-500 ease-in-out  ${
+                extentionIsVisible ? "ml-4 text-[80px]" : "text-[60px]"
+              }`}
+            >
+              {temperatureNow}
+              <span className="text-[30px] ">°</span>
+            </h2>
+           
+            <div
               className={`flex items-center gap-2 text-sm w-fit transition-all duration-500 justify-center ease-in-out ${
                 extentionIsVisible &&
-                "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white drop-shadow-xl"
+                "bg-darkBlue bg-opacity-20 rounded-xl p-3 text-white drop-shadow-xl"
               }`}
             >
               <p>
                 H: {maxTemp}
                 <span className="text-[10px] align-super">°</span>
               </p>{" "}
-              <div className="w-[2px] h-[30px] bg-white"></div>
+              <div className="w-[2px] h-[25px] bg-white"></div>
               <p>
                 L: {minTemp}
                 <span className="text-[10px] align-super">°</span>

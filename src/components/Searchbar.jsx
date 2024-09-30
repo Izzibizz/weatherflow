@@ -1,10 +1,10 @@
 import { useForecastStore } from "../stores/useForecastStore";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Lottie from "lottie-react";
 import loading from "../assets/Animation-round.json"
 
 export const Searchbar = () => {
-  const { fetchForecast, setUserLocation, userLocation, showSearchField, setShowSearchField, searching, setSearching } = useForecastStore();
+  const { fetchForecast, setUserLocation, userLocation, showSearchField, setShowSearchField, searching, setSearching, city } = useForecastStore();
   const [cityInput, setCityInput] = useState("");
 
   const handleCityInput = (e) => {
@@ -39,7 +39,7 @@ export const Searchbar = () => {
           value={cityInput}
           onChange={handleCityInput}
           className="w-[85%] font-body text-blue  text-xs focus:outline-none overflow-hidden text-ellipsis whitespace-nowrap pl-2"
-          placeholder="Search location"
+          placeholder= {city || "Search location"}
           style={{ fontSize: "16px" }}
         />
       )}

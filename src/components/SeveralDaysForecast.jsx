@@ -52,14 +52,14 @@ export const SeveralDaysForecast = () => {
     className={`bg-white w-full transition-all duration-500 fadeIn ease-in-out hide-scrollbar rounded-b-[2.4rem] font-body ${
       extentionIsVisible ? "h-0 opacity-0" : "h-fit  p-8 py-10 tablet:h-[292px] opacity-100"
     }`}>
-    <ul className="flex flex-col gap-4">
+    <ul className="flex flex-col gap-2">
     {dailyForecasts.map((day, index) => {
         const forecastDate = new Date(day.date);
         const dayIndex = forecastDate.getDay();
         const weekday = weekdays[dayIndex];
 
            return (
-            <li key={index} className="border-b-2 border-dotted pb-4 flex justify-evenly items-center">
+            <li key={index} className="border-b-2 border-dotted pb-2 grid grid-cols-3 items-center">
               <p>{weekday}</p>
               <Lottie
                     animationData={animationByWeather(day.weatherDescription)}
