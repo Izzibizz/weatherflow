@@ -112,9 +112,8 @@ export const TodaysForecast = () => {
         className={`h-fit z-30 mt-[130px] ${
           extentionIsVisible ? "px-8" : "px-12"
         } transition-all duration-500 ease-in-out flex justify-between w-full ${textColorByWeather()}`}
-        style={{ minHeight: "100px" }}
       >
-        <div className="flex flex-col  justify-between">
+        <div className="flex flex-col min-h-[200px] h-[200px] ">
           <h2
             className={` flex pb-2  font-heading transition-all duration-500 ease-in-out drop-shadow-xl ${
               extentionIsVisible ? "ml-2 text-[70px]" : "text-[60px]"
@@ -128,7 +127,6 @@ export const TodaysForecast = () => {
               extentionIsVisible &&
               "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
             } `}
-            style={{ minHeight: "50px" }}
           >
             <h3 className="font-body font-bold drop-shadow-xl uppercase ">
               {weatherNow}
@@ -136,7 +134,7 @@ export const TodaysForecast = () => {
             <p className="font-body text-sm drop-shadow-xl">{city}</p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-between">
+        <div className="flex flex-col items-center">
           <Lottie
             animationData={animationByWeather()}
             loop
@@ -155,7 +153,6 @@ export const TodaysForecast = () => {
               extentionIsVisible &&
               "bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white drop-shadow-xl"
             }`}
-            style={{ minHeight: "50px" }}
           >
             <p>
               H: {maxTemp}
