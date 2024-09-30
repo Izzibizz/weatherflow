@@ -2,6 +2,13 @@ import { useForecastStore } from "../stores/useForecastStore";
 import Lottie from "lottie-react";
 import { SlArrowDown } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
+import { IoMdEye } from "react-icons/io";
+import { WiCloudyWindy } from "react-icons/wi";
+import { FiWind } from "react-icons/fi";
+import { GiSunset } from "react-icons/gi";
+import { GiSunrise } from "react-icons/gi";
+import { IoIosCloudy } from "react-icons/io";
+import { WiHumidity } from "react-icons/wi";
 import sunAnimation from "../assets/Animation-sun.json";
 import cloudAnimation from "../assets/Animation-cloud.json";
 import sunCloudAnimation from "../assets/Animation-sunCloud.json";
@@ -74,8 +81,13 @@ export const TodaysForecast = () => {
 
   const textColorByWeather = () => {
     if (weatherNow) {
-      if (weatherNow.includes("clear") || weatherNow === "few clouds" || weatherNow === "scattered clouds") return "text-white"; 
-      if (weatherNow.includes("clouds")) return "text-gray-800"; 
+      if (
+        weatherNow.includes("clear") ||
+        weatherNow === "few clouds" ||
+        weatherNow === "scattered clouds"
+      )
+        return "text-white";
+      if (weatherNow.includes("clouds")) return "text-gray-800";
       if (weatherNow.includes("rain")) return "text-lightBlue";
     }
     return "text-darkBlue"; // Default text color
@@ -167,9 +179,7 @@ export const TodaysForecast = () => {
             </div>
           </div>
         </div>
-        <div
-          className="bg-darkBlue bg-opacity-20 rounded-xl p-4 h-fit text-white drop-shadow-xl overflow-x-auto hide-scrollbar"
-        >
+        <div className="bg-darkBlue bg-opacity-20 rounded-xl p-4 h-fit text-white drop-shadow-xl overflow-x-auto hide-scrollbar">
           <ul className="flex gap-2 ">
             {filteredForecast.map((hour, index) => {
               // Extract the hour from dt_txt
@@ -178,7 +188,9 @@ export const TodaysForecast = () => {
                 <li key={index} className="flex flex-col gap-2 items-center">
                   <p>{hourDisplay}</p>
                   <Lottie
-                    animationData={animationByWeather(hour.weather[0]?.description)}
+                    animationData={animationByWeather(
+                      hour.weather[0]?.description
+                    )}
                     loop
                     autoPlay
                     style={{
@@ -186,7 +198,8 @@ export const TodaysForecast = () => {
                       height: 30,
                     }}
                     className={`${
-                      hour.weather[0]?.description.includes("rain") && "transform scale-x-[-1]"
+                      hour.weather[0]?.description.includes("rain") &&
+                      "transform scale-x-[-1]"
                     }`}
                   />
                   <p>{Math.round(hour.main.temp)}°</p>
@@ -229,26 +242,45 @@ export const TodaysForecast = () => {
       >
         <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-full flex gap-6 p-4 text-sm justify-evenly">
           <div className="flex flex-col">
-            <p>Sunrise: {timeSunrise}</p>
-            <p>Sunset: {timeSunset}</p>
+            <div className="flex gap-2">
+              <GiSunrise />
+              <p>{timeSunrise}</p>{" "}
+            </div>
+            <div className="flex gap-2">
+              <GiSunset />
+              <p>{timeSunset}</p>
+            </div>
           </div>
           <div className="w-[2px] bg-white"></div>
           <div>
-            <p>Humidity: {humidity} %</p>
-            <p>Clouds: {clouds} %</p>
+          <div className="flex gap-2">
+          <WiHumidity />
+            <p>{humidity} %</p></div>
+            <div className="flex gap-2">
+            <IoIosCloudy />
+            <p>{clouds} %</p></div>
           </div>
         </div>
-        <div className="flex justify-between gap-2 text-sm">
+        <div className="flex gap-2 text-sm justify-between">
           <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
             <div className="flex flex-col">
               <h4>Wind</h4>
-              <p>Gust: {windGust} mm/s</p>
-              <p>Speed: {windSpeed} mm/s</p>
+              <div className="flex gap-2">
+                <WiCloudyWindy /> <p>{windGust} mm/s</p>
+              </div>
+              <div className="flex gap-2">
+                {" "}
+                <FiWind />
+                <p>{windSpeed} mm/s</p>
+              </div>
             </div>
           </div>
           <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
             <div className="flex flex-col gap-2">
-              <p>Visibility: {visibility} km</p>
+              <div className="flex gap-2">
+                <IoMdEye />
+                <p>{visibility} km</p>
+              </div>
               <p>
                 The view is{" "}
                 {viewIsClear ? "clear" : foggy ? "foggy" : "uncertain"}
