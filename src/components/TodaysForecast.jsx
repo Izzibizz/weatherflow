@@ -121,7 +121,7 @@ export const TodaysForecast = () => {
         src={videoByWeather()}
       />
       <div
-        className={`h-fit z-30 mt-[110px] px-8 transition-all duration-500 ease-in-out flex-col gap-4 flex w-full ${textColorByWeather()}`}
+        className={`h-fit z-30 mt-[120px] px-8 transition-all duration-500 ease-in-out flex-col gap-4 flex w-full ${textColorByWeather()}`}
       >
         <div className="flex justify-between">
           <div
@@ -141,15 +141,15 @@ export const TodaysForecast = () => {
               }`}
             />
             <div
-              className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
+              className={`flex flex-col gap-4 transition-all duration-500 ease-in-out ${
                 extentionIsVisible ?
                 "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white" : "pl-4"
               } `}
             >
-              <h3 className={`font-street tracking-widest drop-shadow-xl uppercase`}>
+              <h3 className={`font-body tracking-widest text-sm text-center drop-shadow-xl`}>
                 {weatherNow}
               </h3>
-              {!extentionIsVisible && <p className="font-street tracking-widest drop-shadow-xl">{city}</p>}
+              
               </div>
           </div>
           <div className="flex flex-col items-center justify-between gap-4 items-start">
