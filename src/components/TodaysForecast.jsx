@@ -112,7 +112,7 @@ export const TodaysForecast = () => {
           extentionIsVisible
             ? " tablet:rounded-b-[2.4rem]"
             : "tablet:rounded-b-none"
-        } h-full object-cover w-full transform transition-all absolute z-10  duration-500 ease-in-out fadeIn tablet:rounded-t-[2.4rem] `}
+        } h-full min-h-full object-cover w-full transform transition-all absolute z-10  duration-500 ease-in-out fadeIn tablet:rounded-t-[2.4rem] `}
         autoPlay
         muted
         loop
@@ -261,7 +261,7 @@ export const TodaysForecast = () => {
             <p>{clouds} %</p></div>
           </div>
         </div>
-        <div className="flex gap-2 text-sm justify-between">
+        <div className="flex gap-2 text-sm justify-end">
           <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
             <div className="flex flex-col">
               <h4>Wind</h4>
