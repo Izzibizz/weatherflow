@@ -142,8 +142,8 @@ export const TodaysForecast = () => {
             />
             <div
               className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
-                extentionIsVisible &&
-                "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
+                extentionIsVisible ?
+                "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white" : "pl-4"
               } `}
             >
               <h3 className={`font-street tracking-widest drop-shadow-xl uppercase`}>
