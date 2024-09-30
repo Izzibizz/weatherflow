@@ -156,6 +156,7 @@ export const TodaysForecast = () => {
           <h2
               className={` flex drop-shadow-xl pr-4 font-heading self-end tracking-wider transition-all duration-500 ease-in-out  ${
                 extentionIsVisible ? "text-[80px]": "text-[60px]"} `}
+                style={{ height: extentionIsVisible ? '80px' : '60px' }}
             >
               {temperatureNow}
               <span className="text-[30px] ">°</span>
