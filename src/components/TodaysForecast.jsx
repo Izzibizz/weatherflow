@@ -109,7 +109,7 @@ export const TodaysForecast = () => {
         src={videoByWeather()}
       />
       <div
-        className={`h-fit z-30 mt-[130px] ${
+        className={`h-fit z-30  ${
           extentionIsVisible ? "px-8" : "px-12"
         } transition-all duration-500 ease-in-out flex justify-between w-full ${textColorByWeather()}`}
       >
