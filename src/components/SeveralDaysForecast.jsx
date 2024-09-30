@@ -49,7 +49,7 @@ export const SeveralDaysForecast = () => {
 
   return (
     <div
-    className={`bg-white w-full transition-all duration-500 fadeIn ease-in-out overflow-y-auto hide-scrollbar rounded-b-[2.4rem] p-8 py-10 font-body ${
+    className={`bg-white w-full transition-all duration-500 fadeIn ease-in-out tablet:overflow-y-auto hide-scrollbar rounded-b-[2.4rem] p-8 py-10 font-body ${
       extentionIsVisible ? "h-0 opacity-0" : "h-fit tablet:h-[292px] opacity-100"
     }`}>
     <ul className="flex flex-col gap-4">
