@@ -3,6 +3,7 @@ import { SeveralDaysForecast } from "../components/SeveralDaysForecast"
 import { useEffect } from "react"
 import { useForecastStore } from "../stores/useForecastStore"
 import { Loading } from "../components/Loading"
+import { ErrorMessage } from "../components/ErrorMessage"
 
 export const Forecasts = () => {
 
@@ -14,18 +15,18 @@ export const Forecasts = () => {
     }
   }, [city, fetchForecast]); // Empty dependency array
 
-  if (loading) return <Loading />;
-  if (error) return <div>Error: {error.message}</div>;
+  if (!city && loading) return <Loading />;
 
   return (
     <div className="flex flex-col">
-      {forecastData ? (
+      {forecastData && (
         <>
           <TodaysForecast />  
           <SeveralDaysForecast /> 
         </>
-      ) : (
-        <div>No forecast data available</div>
+      )} 
+      { error && (
+        <ErrorMessage/>
       )}
     </div>
   );

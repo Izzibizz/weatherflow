@@ -1,8 +1,10 @@
 import { useForecastStore } from "../stores/useForecastStore";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Lottie from "lottie-react";
+import loading from "../assets/Animation-round.json"
 
 export const Searchbar = () => {
-  const { fetchForecast, setUserLocation, userLocation, showSearchField, setShowSearchField } = useForecastStore();
+  const { fetchForecast, setUserLocation, userLocation, showSearchField, setShowSearchField, searching, setSearching } = useForecastStore();
   const [cityInput, setCityInput] = useState("");
 
   const handleCityInput = (e) => {
@@ -10,11 +12,13 @@ export const Searchbar = () => {
   };
 
   const handleSearch = () => {
+    setSearching(true)
     fetchForecast(`q=${cityInput}`); // Fetch the forecast for the entered city
     setCityInput("");
     setUserLocation({});
     console.log(userLocation);
   };
+
 
   return (
     <form
@@ -39,6 +43,19 @@ export const Searchbar = () => {
           style={{ fontSize: "16px" }}
         />
       )}
+      {searching ? (
+        <div className="flex justify-center items-center">
+        <Lottie
+        animationData={loading}
+        loop
+        autoPlay
+        style={{
+          width: 40,
+          height: 40,
+        }}
+      />
+      </div>
+      ) : (
       <button
         type="submit"
         onClick={() => {
@@ -60,6 +77,7 @@ export const Searchbar = () => {
           alt="search icon"
         />
       </button>
+      )}
     </form>
   );
 };

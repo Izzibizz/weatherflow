@@ -2,7 +2,7 @@ import { create } from "zustand"
 
 export const useForecastStore = create((set) => ({
     loading: false,
-    error: "",
+    error: false,
     forecastData: [],
     city: "",
     country: "",
@@ -11,14 +11,17 @@ export const useForecastStore = create((set) => ({
     userLocation: {},
     extentionIsVisible: false,
     showSearchField: false,
+    searching: false,
 
     setCity: (input) => set({ city: input }),
     setUserLocation: (input) => set({ userLocation: input }),
     setExtentionIsVisible: (input) => set({ extentionIsVisible: input }), 
     setShowSearchField: (input) => set({ showSearchField: input }),
+    setSearching: (input) => set({ searching: input }),
+    setError: (input) => set({ error: input }),
 
     fetchForecast: async (city) => {
-        set({ loading: true, error: null }); // Set loading and clear error
+        set({ loading: true, error: false }); // Set loading and clear error
     
         try {
           const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?${city}&units=metric&appid=9fd58fe4bdef8641db37b66e72207fcb`, {
@@ -43,9 +46,9 @@ export const useForecastStore = create((set) => ({
           console.log(data);
         } catch (error) {
           console.log("error:", error);
-          set({ error: error });
+          set({ error: true });
         } finally {
-          set({ loading: false, extentionIsVisible: false }); // Set loading to false when done
+          set({extentionIsVisible: false, loading: false, searching: false })
         }
       },
       
