@@ -73,7 +73,7 @@ export const SeveralDaysForecast = () => {
                       day.weatherDescription.includes("rain") && "transform scale-x-[-1]"
                     }`}
                   />
-                  <div className="p-2 px-4 flex bg-gray-400 bg-opacity-20 rounded-xl gap-2 items-center">
+                  <div className="p-2 px-4 flex bg-gray-400 bg-opacity-20 rounded-xl gap-2 items-center justify-evenly">
                  <p>{Math.round(day.minTemp)}°</p> 
                  <div className="w-[1px] h-[20px] bg-black"></div>
                  <p>{Math.round(day.maxTemp)}°</p>

@@ -152,11 +152,10 @@ export const TodaysForecast = () => {
               {!extentionIsVisible && <p className="font-street tracking-widest drop-shadow-xl">{city}</p>}
               </div>
           </div>
-          <div className="flex flex-col items-center justify-end pb-2 h-fit">
+          <div className="flex flex-col items-center justify-between gap-4 items-start">
           <h2
-              className={` flex drop-shadow-xl pr-4 font-heading self-end tracking-wider transition-all duration-500 ease-in-out  ${
-                extentionIsVisible ? "text-[80px]": "text-[60px]"} `}
-                style={{ height: extentionIsVisible ? '80px' : '60px' }}
+              className={` flex drop-shadow-xl text-[60px] pr-4 font-heading  transition-all duration-500 ease-in-out  ${
+               extentionIsVisible ? "scale-[1.3]" : "scale-[1]"} `}
             >
               {temperatureNow}
               <span className="text-[30px] ">°</span>
@@ -164,7 +163,7 @@ export const TodaysForecast = () => {
             <div
               className={`flex items-center gap-2 text-sm w-fit transition-all duration-500 justify-center ease-in-out ${
                 extentionIsVisible &&
-                "bg-darkBlue bg-opacity-20 rounded-xl p-2 text-white drop-shadow-xl"
+                "bg-darkBlue bg-opacity-20 rounded-xl p-2 px-4 text-white drop-shadow-xl"
               }`}
             >
               <p>
