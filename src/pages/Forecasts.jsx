@@ -12,7 +12,7 @@ export const Forecasts = () => {
     if (city === "" ) {
     fetchForecast((`q=stockholm`));  // Fetch forecast on mount
     }
-  }, []); // Empty dependency array
+  }, [city, fetchForecast]); // Empty dependency array
 
   if (loading) return <Loading />;
   if (error) return <div>Error: {error.message}</div>;

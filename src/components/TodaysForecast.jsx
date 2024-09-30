@@ -113,7 +113,7 @@ export const TodaysForecast = () => {
           extentionIsVisible ? "px-8" : "px-12"
         } transition-all duration-500 ease-in-out flex justify-between w-full ${textColorByWeather()}`}
       >
-        <div className="flex flex-col min-h-[200px] h-[200px] ">
+        <div className="flex flex-col transition-all duration-500 ease-in-out">
           <h2
             className={` flex pb-2  font-heading transition-all duration-500 ease-in-out drop-shadow-xl ${
               extentionIsVisible ? "ml-2 text-[70px]" : "text-[60px]"
