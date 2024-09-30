@@ -35,19 +35,6 @@ export const SeveralDaysForecast = () => {
   });
 
     const weatherNow = forecastData?.[0]?.weather?.[0]?.description;
-  // background
-
-  const bgColorByWeather = () => {
-    if (weatherNow) {
-      if (weatherNow.includes("clear")) return "bg-white"; // Example color for clear weather
-      if (weatherNow === "few clouds" || weatherNow === "scattered clouds")
-        return "bg-lightBlue"; // Example color for cloudy weather
-      if (weatherNow.includes("clouds")) return "bg-gray-600"; // Example color for overcast
-      if (weatherNow.includes("rain")) return "bg-darkBlue"; // Example color for rain
-      // Add more conditions for other weather types as needed
-    }
-    return "text-darkBlue"; // Default text color
-  };
 
   const animationByWeather = (weather) => {
     if (weather) {
@@ -62,17 +49,17 @@ export const SeveralDaysForecast = () => {
 
   return (
     <div
-    className={`${bgColorByWeather()} w-full transition-all duration-500 fadeIn ease-in-out overflow-y-auto hide-scrollbar rounded-b-[2.4rem] p-8 py-10 font-body ${
+    className={`bg-white w-full transition-all duration-500 fadeIn ease-in-out overflow-y-auto hide-scrollbar rounded-b-[2.4rem] p-8 py-10 font-body ${
       extentionIsVisible ? "h-0 opacity-0" : "h-fit tablet:h-[292px] opacity-100"
     }`}>
-    <ul className="flex flex-col gap-8">
+    <ul className="flex flex-col gap-4">
     {dailyForecasts.map((day, index) => {
         const forecastDate = new Date(day.date);
         const dayIndex = forecastDate.getDay();
         const weekday = weekdays[dayIndex];
 
            return (
-            <li key={index} className="border-b pb-4 flex justify-evenly">
+            <li key={index} className="border-b-2 border-dotted pb-4 flex justify-evenly items-center">
               <p>{weekday}</p>
               <Lottie
                     animationData={animationByWeather(day.weatherDescription)}
@@ -86,9 +73,11 @@ export const SeveralDaysForecast = () => {
                       day.weatherDescription.includes("rain") && "transform scale-x-[-1]"
                     }`}
                   />
+                  <div className="p-2 px-4 flex bg-gray-400 bg-opacity-20 rounded-xl gap-2 items-center">
                  <p>{Math.round(day.minTemp)}°</p> 
-                 <div className="w-[1px] h-[30px] bg-black"></div>
+                 <div className="w-[1px] h-[20px] bg-black"></div>
                  <p>{Math.round(day.maxTemp)}°</p>
+                 </div>
             </li>
           );
         })}

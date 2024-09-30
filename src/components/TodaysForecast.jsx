@@ -80,12 +80,9 @@ export const TodaysForecast = () => {
 
   const textColorByWeather = () => {
     if (weatherNow) {
-      if (weatherNow.includes("clear")) return "text-white"; // Example color for clear weather
-      if (weatherNow === "few clouds" || weatherNow === "scattered clouds")
-        return "text-darkBlue"; // Example color for cloudy weather
-      if (weatherNow.includes("clouds")) return "text-gray-800"; // Example color for overcast
-      if (weatherNow.includes("rain")) return "text-lightBlue"; // Example color for rain
-      // Add more conditions for other weather types as needed
+      if (weatherNow.includes("clear") || weatherNow === "few clouds" || weatherNow === "scattered clouds") return "text-white"; 
+      if (weatherNow.includes("clouds")) return "text-gray-800"; 
+      if (weatherNow.includes("rain")) return "text-lightBlue";
     }
     return "text-darkBlue"; // Default text color
   };
