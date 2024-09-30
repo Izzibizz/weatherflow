@@ -22,7 +22,6 @@ export const TodaysForecast = () => {
     setExtentionIsVisible,
     sunrise,
     sunset,
-    showSearchField
   } = useForecastStore();
 
   //weather virables
@@ -122,7 +121,7 @@ export const TodaysForecast = () => {
         src={videoByWeather()}
       />
       <div
-        className={`h-fit z-30 mt-[120px] px-8 transition-all duration-500 ease-in-out flex-col gap-4 flex w-full ${textColorByWeather()}`}
+        className={`h-fit z-30 mt-[110px] px-8 transition-all duration-500 ease-in-out flex-col gap-4 flex w-full ${textColorByWeather()}`}
       >
         <div className="flex justify-between">
           <div
@@ -137,7 +136,7 @@ export const TodaysForecast = () => {
                 height: extentionIsVisible ? 120 : 100,
                 transition: "width 0.5s ease, height 0.5s ease",
               }}
-              className={`${
+              className={`pl-4 ${
                 weatherNow?.includes("rain") && "transform scale-x-[-1]"
               }`}
             />
@@ -150,32 +149,28 @@ export const TodaysForecast = () => {
               <h3 className={`font-street tracking-widest drop-shadow-xl uppercase`}>
                 {weatherNow}
               </h3>
-              {!showSearchField && ( 
-              <p className="font-street tracking-widest drop-shadow-xl">{city}</p>
-          )}
+              {!extentionIsVisible && <p className="font-street tracking-widest drop-shadow-xl">{city}</p>}
               </div>
           </div>
-          <div className="flex flex-col items-center ">
+          <div className="flex flex-col items-center justify-end pb-2 h-fit">
           <h2
-              className={` flex drop-shadow-xl font-heading self-end tracking-wider transform transition-all duration-500 ease-in-out  ${
-                extentionIsVisible ? "ml-4 text-[80px]" : "text-[60px]"
-              }`}
+              className={` flex drop-shadow-xl pr-4 font-heading self-end tracking-wider transition-all duration-500 ease-in-out  ${
+                extentionIsVisible ? "text-[80px]": "text-[60px]"} `}
             >
               {temperatureNow}
               <span className="text-[30px] ">°</span>
             </h2>
-           
             <div
               className={`flex items-center gap-2 text-sm w-fit transition-all duration-500 justify-center ease-in-out ${
                 extentionIsVisible &&
-                "bg-darkBlue bg-opacity-20 rounded-xl p-3 text-white drop-shadow-xl"
+                "bg-darkBlue bg-opacity-20 rounded-xl p-2 text-white drop-shadow-xl"
               }`}
             >
               <p>
                 H: {maxTemp}
                 <span className="text-[10px] align-super">°</span>
               </p>{" "}
-              <div className="w-[2px] h-[25px] bg-white"></div>
+              <div className="w-[2px] h-[30px] bg-white"></div>
               <p>
                 L: {minTemp}
                 <span className="text-[10px] align-super">°</span>
@@ -265,7 +260,7 @@ export const TodaysForecast = () => {
             <p>{clouds} %</p></div>
           </div>
         </div>
-        <div className="flex gap-2 text-sm justify-end">
+        <div className="flex gap-2 text-sm justify-end tablet:justify-between">
           <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
             <div className="flex flex-col">
               <h4>Wind</h4>
