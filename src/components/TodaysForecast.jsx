@@ -150,8 +150,8 @@ export const TodaysForecast = () => {
               loop
               autoPlay
               style={{
-                width: extentionIsVisible ? 140 : 100,
-                height: extentionIsVisible ? 140 : 100,
+                width: extentionIsVisible ? 120 : 100,
+                height: extentionIsVisible ? 120 : 100,
                 transition: "width 0.5s ease, height 0.5s ease",
               }}
               className={`${
@@ -248,7 +248,7 @@ export const TodaysForecast = () => {
             <p>Clouds: {clouds} %</p>
           </div>
         </div>
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between gap-2 text-sm">
           <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
             <div className="flex flex-col">
               <h4>Wind</h4>
@@ -257,7 +257,7 @@ export const TodaysForecast = () => {
             </div>
           </div>
           <div className=" bg-darkBlue drop-shadow-xl bg-opacity-20 rounded-xl w-fit flex gap-6 p-4">
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2">
               <p>Visibility: {visibility} km</p>
               <p>
                 The view is{" "}
