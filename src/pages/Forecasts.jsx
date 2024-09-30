@@ -2,6 +2,7 @@ import { TodaysForecast } from "../components/TodaysForecast"
 import { SeveralDaysForecast } from "../components/SeveralDaysForecast"
 import { useEffect } from "react"
 import { useForecastStore } from "../stores/useForecastStore"
+import { Loading } from "../components/Loading"
 
 export const Forecasts = () => {
 
@@ -13,7 +14,7 @@ export const Forecasts = () => {
     }
   }, []); // Empty dependency array
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>Error: {error.message}</div>;
 
   return (

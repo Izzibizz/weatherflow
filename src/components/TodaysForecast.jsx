@@ -120,7 +120,7 @@ export const TodaysForecast = () => {
             } tracking-wider `}
           >
             {temperatureNow}
-            <span className="text-[30px] ">°C</span>
+            <span className="text-[30px] ">°</span>
           </h2>
           <div
             className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${
@@ -156,12 +156,12 @@ export const TodaysForecast = () => {
           >
             <p>
               H: {maxTemp}
-              <span className="text-[10px] align-super">°C</span>
+              <span className="text-[10px] align-super">°</span>
             </p>{" "}
             <div className="w-[2px] h-[30px] bg-white"></div>
             <p>
               L: {minTemp}
-              <span className="text-[10px] align-super">°C</span>
+              <span className="text-[10px] align-super">°</span>
             </p>
           </div>
         </div>
