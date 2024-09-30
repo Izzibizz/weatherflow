@@ -211,27 +211,27 @@ export const TodaysForecast = () => {
       </div>
       <div
         onClick={handleArrowClick}
-        className={`hover:scale-125 hover:cursor-pointer absolute z-40 left-8 flex justify-center items-center transform  transition-all duration-500 ease-in-out fadeIn
+        className={`hover:scale-125 hover:cursor-pointer absolute z-40 left-9 flex justify-center items-center transform  transition-all duration-500 ease-in-out fadeIn
      flex ${
        extentionIsVisible
-         ? " top-[83%] tablet:top-[90%] "
+         ? " top-[80%] tablet:top-[90%] "
          : "top-[420px] phone:top-[450px] tablet:top-[410px]"
      }`}
       >
         <img
           src="/cicrle.svg"
           alt="circle see more"
-          className="w-10 h-10 tablet:w-14 tablet:h-14  z-50"
+          className="w-8 h-8 phone:w-10 phone:h-10 tablet:w-14 tablet:h-14  z-50"
         />
         <SlArrowDown
           className={`${
             extentionIsVisible ? "hidden" : "flex"
-          } w-5 h-5 tablet:w-8 tablet:h-8 text-white absolute  z-50 fadeIn `}
+          } w-4 h-4 phone:w-5 phone:h-5 tablet:w-8 tablet:h-8 text-white absolute  z-50 fadeIn `}
         />
         <SlArrowUp
           className={`${
             extentionIsVisible ? "flex" : "hidden"
-          } w-5 h-5 tablet:w-8 tablet:h-8 text-white absolute z-50 fadeIn`}
+          } w-4 h-4 phone:w-5 phone:h-5 tablet:w-8 tablet:h-8 text-white absolute z-50 fadeIn`}
         />
       </div>
 
