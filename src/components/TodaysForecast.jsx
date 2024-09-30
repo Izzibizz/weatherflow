@@ -17,7 +17,6 @@ import rainAnimation from "../assets/Animation-rain.json";
 export const TodaysForecast = () => {
   const {
     forecastData,
-    city,
     extentionIsVisible,
     setExtentionIsVisible,
     sunrise,
@@ -136,7 +135,7 @@ export const TodaysForecast = () => {
                 height: extentionIsVisible ? 120 : 100,
                 transition: "width 0.5s ease, height 0.5s ease",
               }}
-              className={`pl-4 ${
+              className={`pl-4 drop-shadow-xl ${
                 weatherNow?.includes("rain") && "transform scale-x-[-1]"
               }`}
             />

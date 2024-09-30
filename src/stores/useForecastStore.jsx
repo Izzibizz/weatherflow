@@ -48,7 +48,7 @@ export const useForecastStore = create((set) => ({
           console.log("error:", error);
           set({ error: true });
         } finally {
-          set({extentionIsVisible: false, loading: false, searching: false })
+          set({extentionIsVisible: false, loading: false, searching: false, showSearchField: false })
         }
       },
       
