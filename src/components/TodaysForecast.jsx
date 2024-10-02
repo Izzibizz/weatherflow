@@ -1,4 +1,5 @@
 import { useForecastStore } from "../stores/useForecastStore";
+import { useEffect, useState } from "react"
 import Lottie from "lottie-react";
 import { SlArrowDown } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
@@ -24,6 +25,10 @@ export const TodaysForecast = () => {
   } = useForecastStore();
 
   //weather virables
+  const currentHour = new Date().getHours();
+  console.log(currentHour);
+  const [ itIsNight, setItIsNight ] = useState(false)
+
   const weatherNow = forecastData?.[0]?.weather?.[0]?.description;
   const temperatureNow = Math.round(forecastData?.[0]?.main?.temp);
   const minTemp = Math.round(forecastData?.[0]?.main?.temp_min);
@@ -49,9 +54,17 @@ export const TodaysForecast = () => {
 
   const filteredForecast = forecastData.slice(1, 9);
 
+  useEffect(() => {
+    if (currentHour >= 19) {
+      setItIsNight(true)
+    }
+  }, [currentHour])
+
   const videoByWeather = () => {
     if (weatherNow) {
-      if (weatherNow === "few clouds")
+      if (itIsNight)
+        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727859192/clouds-night_mopngi.mp4"
+      else if (weatherNow === "few clouds")
         return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146428/little-clouds_ne5eaw.mp4";
       else if (weatherNow === "scattered clouds")
         return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146429/scattered-clouds_hymr9l.mp4";
