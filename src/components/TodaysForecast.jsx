@@ -22,11 +22,12 @@ export const TodaysForecast = () => {
     setExtentionIsVisible,
     sunrise,
     sunset,
+    timezone,
+    city
   } = useForecastStore();
 
   //weather virables
-  const currentHour = new Date().getHours();
-  console.log(currentHour);
+  
   const [ itIsNight, setItIsNight ] = useState(false)
 
   const weatherNow = forecastData?.[0]?.weather?.[0]?.description;
@@ -55,10 +56,29 @@ export const TodaysForecast = () => {
   const filteredForecast = forecastData.slice(1, 9);
 
   useEffect(() => {
-    if (currentHour >= 19) {
-      setItIsNight(true)
+    // Get the current UTC time
+    const currentUtcTime = new Date().getTime(); // UTC time in milliseconds
+  
+    // Convert the timezone offset from seconds to milliseconds
+    const timezoneOffsetInMilliseconds = timezone * 1000;
+  
+    // Calculate the local time by adjusting the UTC time with the city's timezone offset
+    const localTime = new Date(currentUtcTime + timezoneOffsetInMilliseconds);
+  
+    // Get the hour of the local time (0-23) in UTC context (which now reflects the correct local time for that city)
+    const localHour = localTime.getUTCHours(); // This should now give you the correct local hour of the city
+  
+    // Check if it's later than 20:00 (8 PM) or earlier than 6 AM
+    if (localHour >= 20 || localHour < 6) {
+      setItIsNight(true);  // Set night mode
+    } else {
+      setItIsNight(false); // Set day mode
     }
-  }, [currentHour])
+  
+    // Debugging logs to verify
+    console.log("Local Time: ", city, localTime.toUTCString());
+    console.log("Local Hour: ", city, localHour);
+  }, [timezone, city]);
 
   const videoByWeather = () => {
     if (weatherNow) {

@@ -8,6 +8,7 @@ export const useForecastStore = create((set) => ({
     country: "",
     sunrise: "",
     sunset: "",
+    timezone: "",
     userLocation: {},
     extentionIsVisible: false,
     showSearchField: false,
@@ -40,10 +41,11 @@ export const useForecastStore = create((set) => ({
             city: data.city.name,
             country: data.city.country,
             sunrise: data.city.sunrise,
-            sunset: data.city.sunset
+            sunset: data.city.sunset,
+            timezone: data.city.timezone
           });
     
-          console.log(data);
+          console.log("main data", data);
         } catch (error) {
           console.log("error:", error);
           set({ error: true });
