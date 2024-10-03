@@ -14,6 +14,12 @@ import sunAnimation from "../assets/Animation-sun.json";
 import cloudAnimation from "../assets/Animation-cloud.json";
 import sunCloudAnimation from "../assets/Animation-sunCloud.json";
 import rainAnimation from "../assets/Animation-rain.json";
+import thunderRainAnimation from "../assets/Animation-thunderRain.json"
+import thunderAnimation from "../assets/Animation-thunder.json"
+import moonClearAnimation from "../assets/Animation-nightClear.json"
+import moonCloudAnimation from "../assets/Animation-nightCloud.json"
+import moonRainAnimation from "../assets/Animation-nightRain.json"
+import moonSnowAnimation from "../assets/Animation-nightSnow.json"
 
 export const TodaysForecast = () => {
   const {
@@ -23,12 +29,13 @@ export const TodaysForecast = () => {
     sunrise,
     sunset,
     timezone,
-    city
+    city,
+    itIsNight,
+    setItIsNight
   } = useForecastStore();
 
   //weather virables
-  
-  const [ itIsNight, setItIsNight ] = useState(false)
+ 
 
   const weatherNow = forecastData?.[0]?.weather?.[0]?.description;
   const temperatureNow = Math.round(forecastData?.[0]?.main?.temp);
@@ -82,37 +89,64 @@ export const TodaysForecast = () => {
 
   const videoByWeather = () => {
     if (weatherNow) {
-      if (itIsNight)
-        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727859192/clouds-night_mopngi.mp4"
-      else if (weatherNow === "few clouds")
-        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146428/little-clouds_ne5eaw.mp4";
-      else if (weatherNow === "scattered clouds")
-        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146429/scattered-clouds_hymr9l.mp4";
-      else if (weatherNow?.includes("clouds"))
-        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146427/broken-clouds_yabiso.mp4";
-      else if (weatherNow?.includes("clear"))
-        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146442/clear_bpyvlj.mp4";
-      else if (weatherNow?.includes("thunderstorm"))
-        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146452/rain-thunder_pwnr4q.mov";
-      else if (weatherNow?.includes("rain"))
-        return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146440/rain_wgjndm.mov";
+      if (itIsNight) {
+        if (weatherNow === "few clouds" || weatherNow === "scattered clouds") {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727981549/clouds-night_1_snqijt.mp4";
+        } else if (weatherNow.includes("clouds")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727984981/clouds-night_2_jdnazx.mov";
+        } else if (weatherNow.includes("snow")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727981557/snow-day_r8cawa.mp4";
+        } else if (weatherNow.includes("rain")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727983934/nightrain_sa70rc.mp4";
+        } else if (weatherNow.includes("clear")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727983930/fewcloudsnight_rzofg7.mov";
+        } else if (weatherNow.includes("thunderstorm")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727985190/1449846-hd_1906_1080_28fps_1_rmr10w.mp4";
+        }
+        
+      } else {
+        if (weatherNow === "few clouds") {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146428/little-clouds_ne5eaw.mp4";
+        } else if (weatherNow === "scattered clouds") {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146429/scattered-clouds_hymr9l.mp4";
+        } else if (weatherNow.includes("clouds")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146427/broken-clouds_yabiso.mp4";
+        } else if (weatherNow.includes("clear")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146442/clear_bpyvlj.mp4";
+        } else if (weatherNow.includes("thunderstorm")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146452/rain-thunder_pwnr4q.mov";
+        } else if (weatherNow.includes("rain")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146440/rain_wgjndm.mov";
+        }
+      }
     }
-    return "/clear.mp4";
+    
+    return "/clear.mp4"; // Default case
   };
 
-  const animationByWeather = (weather) => {
+  const animationByWeather = ( weather, isHourNight = itIsNight) => {
     if (weather) {
-      if (weather.includes("clear")) return sunAnimation;
+      if  (isHourNight && weather.includes("clear")) return moonClearAnimation;
+      else if (weather.includes("clear")) return sunAnimation;
+      else if (isHourNight &&  weather === "few clouds" || weatherNow === "scattered clouds") return moonCloudAnimation;
+      else if (isHourNight && weather.includes("snow")) return moonSnowAnimation
+      else if (isHourNight && weather.includes("rain")) return moonRainAnimation
       else if (weather === "few clouds" || weatherNow === "scattered clouds")
         return sunCloudAnimation;
       else if (weather.includes("clouds")) return cloudAnimation;
+      else if (weather.includes("thunderstorm") && weather.includes("rain")) return thunderRainAnimation;
       else if (weather.includes("rain")) return rainAnimation;
+      else if (weather.includes("thunderstorm")) return thunderAnimation;
     }
     return sunAnimation;
   };
 
   const textColorByWeather = () => {
     if (weatherNow) {
+      if (
+        itIsNight
+      )
+        return "text-white"
       if (
         weatherNow.includes("clear") ||
         weatherNow === "few clouds" ||
@@ -215,12 +249,13 @@ export const TodaysForecast = () => {
             {filteredForecast.map((hour, index) => {
               // Extract the hour from dt_txt
               const hourDisplay = hour.dt_txt.split(" ")[1].split(":")[0];
+              const isHourNight = hourDisplay >= 20 || hourDisplay < 6;
               return (
                 <li key={index} className="flex flex-col gap-2 items-center">
                   <p>{hourDisplay}</p>
                   <Lottie
                     animationData={animationByWeather(
-                      hour.weather[0]?.description
+                      hour.weather[0]?.description, isHourNight
                     )}
                     loop
                     autoPlay

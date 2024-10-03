@@ -13,6 +13,7 @@ export const useForecastStore = create((set) => ({
     extentionIsVisible: false,
     showSearchField: false,
     searching: false,
+    itIsNight: false,
 
     setCity: (input) => set({ city: input }),
     setUserLocation: (input) => set({ userLocation: input }),
@@ -20,6 +21,7 @@ export const useForecastStore = create((set) => ({
     setShowSearchField: (input) => set({ showSearchField: input }),
     setSearching: (input) => set({ searching: input }),
     setError: (input) => set({ error: input }),
+    setItIsNight: (input) => set({ itIsNight: input }),
 
     fetchForecast: async (city) => {
         set({ loading: true, error: false }); // Set loading and clear error

@@ -8,7 +8,7 @@ import Lottie from "lottie-react";
 
 export const SeveralDaysForecast = () => {
 
-  const { extentionIsVisible, forecastData } = useForecastStore()
+  const { extentionIsVisible, forecastData, itIsNight } = useForecastStore()
   const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
    // Group forecast data by date
@@ -49,7 +49,7 @@ export const SeveralDaysForecast = () => {
 
   return (
     <div
-    className={`bg-white w-full transition-all duration-500 fadeIn ease-in-out hide-scrollbar rounded-b-[2.4rem] font-body ${
+    className={`${itIsNight ? "bg-[#000000] text-white" : "bg-white"} w-full transition-all duration-500 fadeIn ease-in-out hide-scrollbar rounded-b-[2.4rem] font-body ${
       extentionIsVisible ? "h-0 opacity-0" : "h-fit  p-8 py-10 tablet:h-[292px] opacity-100"
     }`}>
     <ul className="flex flex-col gap-2">
