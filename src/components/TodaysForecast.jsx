@@ -67,7 +67,7 @@ export const TodaysForecast = () => {
 
   //hour by hour
 
-  const filteredForecast = forecastData.slice(1, 11);
+  const filteredForecast = forecastData.slice(1, 13);
 
   useEffect(() => {
     // Get the current UTC time
