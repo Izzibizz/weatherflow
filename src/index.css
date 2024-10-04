@@ -20,7 +20,8 @@
   }
   
   .hide-scrollbar {
-    touch-action: pan-y; /* Allow vertical scrolling while panning horizontally */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile */
+    overflow-x: auto; /* Ensure horizontal scroll is enabled */
+    overflow-y: hidden; /* Hide vertical scrolling */
+    touch-action: pan-x; /* Allow horizontal touch swipe */
   }
