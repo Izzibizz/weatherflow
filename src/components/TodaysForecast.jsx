@@ -182,7 +182,7 @@ export const TodaysForecast = () => {
           extentionIsVisible
             ? " tablet:rounded-b-[2.4rem]"
             : "tablet:rounded-b-none"
-        } h-full min-h-full object-cover w-full transform transition-all absolute z-10  duration-500 ease-in-out fadeIn tablet:rounded-t-[2.4rem] `}
+        } h-full min-h-full object-cover w-full min-w-full transform transition-all absolute z-10  duration-500 ease-in-out fadeIn tablet:rounded-t-[2.4rem] `}
         autoPlay
         muted
         loop
