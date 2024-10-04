@@ -99,7 +99,7 @@ export const TodaysForecast = () => {
           weatherNow === "scattered clouds" ||
           weatherNow === "broken clouds"
         ) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727981549/clouds-night_1_snqijt.mp4";
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728033696/AdobeStock_225117510_kc69ed.mov";
         } else if (
           weatherNow.includes("clouds") ||
           weatherNow.includes("mist")
