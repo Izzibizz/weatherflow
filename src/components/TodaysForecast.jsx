@@ -1,5 +1,5 @@
 import { useForecastStore } from "../stores/useForecastStore";
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import Lottie from "lottie-react";
 import { SlArrowDown } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
@@ -20,6 +20,7 @@ import moonClearAnimation from "../assets/Animation-nightClear.json"
 import moonCloudAnimation from "../assets/Animation-nightCloud.json"
 import moonRainAnimation from "../assets/Animation-nightRain.json"
 import moonSnowAnimation from "../assets/Animation-nightSnow.json"
+import mistAnimation from "../assets/Animation-fog.json"
 
 export const TodaysForecast = () => {
   const {
@@ -41,13 +42,18 @@ export const TodaysForecast = () => {
   const temperatureNow = Math.round(forecastData?.[0]?.main?.temp);
   const minTemp = Math.round(forecastData?.[0]?.main?.temp_min);
   const maxTemp = Math.round(forecastData?.[0]?.main?.temp_max);
-  const timeSunrise = new Date(sunrise * 1000).toLocaleTimeString([], {
+  const timezoneOffsetInMilliseconds = timezone * 1000
+  const timeSunrise = new Date((sunrise * 1000) + timezoneOffsetInMilliseconds)
+  .toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "UTC", // Force UTC to avoid local timezone interference
   });
-  const timeSunset = new Date(sunset * 1000).toLocaleTimeString([], {
+  const timeSunset = new Date((sunset * 1000) + timezoneOffsetInMilliseconds)
+  .toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "UTC", // Force UTC to avoid local timezone interference
   });
   const humidity = forecastData?.[0]?.main?.humidity;
   const clouds = forecastData?.[0]?.clouds?.all;
@@ -60,14 +66,11 @@ export const TodaysForecast = () => {
 
   //hour by hour
 
-  const filteredForecast = forecastData.slice(1, 9);
+  const filteredForecast = forecastData.slice(1, 11);
 
   useEffect(() => {
     // Get the current UTC time
     const currentUtcTime = new Date().getTime(); // UTC time in milliseconds
-  
-    // Convert the timezone offset from seconds to milliseconds
-    const timezoneOffsetInMilliseconds = timezone * 1000;
   
     // Calculate the local time by adjusting the UTC time with the city's timezone offset
     const localTime = new Date(currentUtcTime + timezoneOffsetInMilliseconds);
@@ -76,7 +79,7 @@ export const TodaysForecast = () => {
     const localHour = localTime.getUTCHours(); // This should now give you the correct local hour of the city
   
     // Check if it's later than 20:00 (8 PM) or earlier than 6 AM
-    if (localHour >= 20 || localHour < 6) {
+    if (localHour >= 20 || localHour < 7) {
       setItIsNight(true);  // Set night mode
     } else {
       setItIsNight(false); // Set day mode
@@ -90,12 +93,12 @@ export const TodaysForecast = () => {
   const videoByWeather = () => {
     if (weatherNow) {
       if (itIsNight) {
-        if (weatherNow === "few clouds" || weatherNow === "scattered clouds") {
+        if (weatherNow === "few clouds" || weatherNow === "scattered clouds" || weatherNow === "broken clouds") {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727981549/clouds-night_1_snqijt.mp4";
-        } else if (weatherNow.includes("clouds")) {
+        } else if (weatherNow.includes("clouds") || weatherNow.includes("mist")) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727984981/clouds-night_2_jdnazx.mov";
         } else if (weatherNow.includes("snow")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727981557/snow-day_r8cawa.mp4";
+          return "hhttps://res.cloudinary.com/dbf8xygxz/video/upload/v1728031997/vecteezy_winter-scene-in-cold-night-with-snow-falling-in-4k_1616757_by1jfp.mp4";
         } else if (weatherNow.includes("rain")) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727983934/nightrain_sa70rc.mp4";
         } else if (weatherNow.includes("clear")) {
@@ -107,15 +110,17 @@ export const TodaysForecast = () => {
       } else {
         if (weatherNow === "few clouds") {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146428/little-clouds_ne5eaw.mp4";
-        } else if (weatherNow === "scattered clouds") {
+        } else if (weatherNow === "scattered clouds" || weatherNow === "broken clouds") {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146429/scattered-clouds_hymr9l.mp4";
         } else if (weatherNow.includes("clouds")) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146427/broken-clouds_yabiso.mp4";
         } else if (weatherNow.includes("clear")) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146442/clear_bpyvlj.mp4";
+        } else if (weatherNow.includes("snow")) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727981557/snow-day_r8cawa.mp4";
         } else if (weatherNow.includes("thunderstorm")) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146452/rain-thunder_pwnr4q.mov";
-        } else if (weatherNow.includes("rain")) {
+        } else if (weatherNow.includes("rain") || weatherNow.includes("drizzle")) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146440/rain_wgjndm.mov";
         }
       }
@@ -128,15 +133,16 @@ export const TodaysForecast = () => {
     if (weather) {
       if  (isHourNight && weather.includes("clear")) return moonClearAnimation;
       else if (weather.includes("clear")) return sunAnimation;
-      else if (isHourNight &&  weather === "few clouds" || weatherNow === "scattered clouds") return moonCloudAnimation;
+      else if (isHourNight && weather.includes("clouds")) return moonCloudAnimation;
       else if (isHourNight && weather.includes("snow")) return moonSnowAnimation
       else if (isHourNight && weather.includes("rain")) return moonRainAnimation
       else if (weather === "few clouds" || weatherNow === "scattered clouds")
         return sunCloudAnimation;
       else if (weather.includes("clouds")) return cloudAnimation;
       else if (weather.includes("thunderstorm") && weather.includes("rain")) return thunderRainAnimation;
-      else if (weather.includes("rain")) return rainAnimation;
+      else if (weather.includes("rain")  || weatherNow.includes("drizzle")) return rainAnimation;
       else if (weather.includes("thunderstorm")) return thunderAnimation;
+      else if (weather.includes("mist")) return mistAnimation;
     }
     return sunAnimation;
   };
@@ -147,13 +153,11 @@ export const TodaysForecast = () => {
         itIsNight
       )
         return "text-white"
-      if (
-        weatherNow.includes("clear") ||
-        weatherNow === "few clouds" ||
-        weatherNow === "scattered clouds"
+        if ( weatherNow.includes("clouds") ||
+        weatherNow.includes("clear")
       )
         return "text-white";
-      if (weatherNow.includes("clouds")) return "text-gray-800";
+      if (weatherNow === "overcast clouds") return "text-gray-800";
       if (weatherNow.includes("rain")) return "text-lightBlue";
     }
     return "text-darkBlue"; // Default text color
@@ -228,8 +232,8 @@ export const TodaysForecast = () => {
             </h2>
             <div
               className={`flex items-center gap-2 text-sm w-fit transition-all duration-500 justify-center ease-in-out ${
-                extentionIsVisible &&
-                "bg-darkBlue bg-opacity-20 rounded-xl p-2 px-4 text-white drop-shadow-xl"
+                extentionIsVisible ?
+                "bg-darkBlue bg-opacity-20 rounded-xl p-2 px-4 text-white drop-shadow-xl" : "pr-4"
               }`}
             >
               <p>
@@ -249,7 +253,7 @@ export const TodaysForecast = () => {
             {filteredForecast.map((hour, index) => {
               // Extract the hour from dt_txt
               const hourDisplay = hour.dt_txt.split(" ")[1].split(":")[0];
-              const isHourNight = hourDisplay >= 20 || hourDisplay < 6;
+              const isHourNight = hourDisplay >= 20 || hourDisplay < 7;
               return (
                 <li key={index} className="flex flex-col gap-2 items-center">
                   <p>{hourDisplay}</p>

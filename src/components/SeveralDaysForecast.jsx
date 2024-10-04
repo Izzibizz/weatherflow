@@ -59,7 +59,7 @@ export const SeveralDaysForecast = () => {
         const weekday = weekdays[dayIndex];
 
            return (
-            <li key={index} className="border-b-2 border-dotted pb-2 grid grid-cols-3 items-center">
+            <li key={index} className={`border-b-2 border-dotted ${itIsNight? "border-darkBlue" : "border-grey"} pb-2 grid grid-cols-3 items-center`}>
               <p>{weekday}</p>
               <Lottie
                     animationData={animationByWeather(day.weatherDescription)}
@@ -75,7 +75,7 @@ export const SeveralDaysForecast = () => {
                   />
                   <div className="p-2 px-4 flex bg-gray-400 bg-opacity-20 rounded-xl gap-2 items-center justify-evenly">
                  <p>{Math.round(day.minTemp)}°</p> 
-                 <div className="w-[1px] h-[20px] bg-black"></div>
+                 <div className={`w-[1px] h-[20px] ${itIsNight? "bg-white" : "bg-black"}`}/>
                  <p>{Math.round(day.maxTemp)}°</p>
                  </div>
             </li>
