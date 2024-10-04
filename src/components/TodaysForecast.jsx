@@ -96,17 +96,20 @@ export const TodaysForecast = () => {
       if (itIsNight) {
         if (
           weatherNow === "few clouds" ||
-          weatherNow === "scattered clouds" ||
-          weatherNow === "broken clouds"
+          weatherNow === "scattered clouds"
         ) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728033696/AdobeStock_225117510_kc69ed.mov";
+        } else if (
+          weatherNow === "broken clouds"
+        ) {
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728034271/clouds-night_6_pily9a.mp4";
         } else if (
           weatherNow.includes("clouds") ||
           weatherNow.includes("mist")
         ) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727984981/clouds-night_2_jdnazx.mov";
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728034801/clouds-night_7_dr8nl0.mp4";
         } else if (weatherNow.includes("snow")) {
-          return "hhttps://res.cloudinary.com/dbf8xygxz/video/upload/v1728031997/vecteezy_winter-scene-in-cold-night-with-snow-falling-in-4k_1616757_by1jfp.mp4";
+          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728031997/vecteezy_winter-scene-in-cold-night-with-snow-falling-in-4k_1616757_by1jfp.mp4";
         } else if (weatherNow.includes("rain")) {
           return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727983934/nightrain_sa70rc.mp4";
         } else if (weatherNow.includes("clear")) {
