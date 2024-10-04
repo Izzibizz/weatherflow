@@ -269,7 +269,7 @@ export const TodaysForecast = () => {
           </div>
         </div>
         <div className="bg-darkBlue bg-opacity-20 rounded-xl p-4 h-fit text-white drop-shadow-xl overflow-x-auto hide-scrollbar">
-          <ul className="flex gap-2 ">
+          <ul className="flex gap-2 w-max">
             {filteredForecast.map((hour, index) => {
               const dateTimeUTC = new Date(hour.dt_txt);
 
