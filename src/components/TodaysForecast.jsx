@@ -229,7 +229,7 @@ export const TodaysForecast = () => {
             <div
               className={`flex flex-col gap-4 transition-all duration-500 ease-in-out ${
                 extentionIsVisible
-                  ? "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-4 text-white"
+                  ? "drop-shadow-xl bg-darkBlue bg-opacity-20 rounded-xl p-2 text-white max-w-[220px]"
                   : "pl-4"
               } `}
             >
@@ -269,7 +269,7 @@ export const TodaysForecast = () => {
           </div>
         </div>
         <div className="bg-darkBlue bg-opacity-20 rounded-xl p-4 h-fit text-white drop-shadow-xl overflow-x-auto hide-scrollbar">
-          <ul className="flex gap-2 w-max">
+          <ul className="flex gap-2">
             {filteredForecast.map((hour, index) => {
               const dateTimeUTC = new Date(hour.dt_txt);
 
@@ -282,7 +282,7 @@ export const TodaysForecast = () => {
               const isHourNight = localHour >= 20 || localHour < 7;
 
               return (
-                <li key={index} className="flex flex-col gap-2 items-center">
+                <li key={index} className="flex flex-col gap-2 items-center min-h-[80px]">
                   <p>{localHour}</p> {/* Display the local hour */}
                   <Lottie
                     animationData={animationByWeather(
