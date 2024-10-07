@@ -21,7 +21,7 @@
   
   .hide-scrollbar {
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile */
-    overflow-x: auto; /* Ensure horizontal scroll is enabled */
-    overflow-y: auto; /* Hide vertical scrolling */
+    overflow-x: scroll; /* Ensure horizontal scroll is enabled */
+    overflow-y: auto; 
     touch-action: pan-x; /* Allow horizontal touch swipe */
   }

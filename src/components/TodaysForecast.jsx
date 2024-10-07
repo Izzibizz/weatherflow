@@ -268,7 +268,7 @@ export const TodaysForecast = () => {
             </div>
           </div>
         </div>
-        <div className="bg-darkBlue bg-opacity-20 rounded-xl p-4 h-fit text-white drop-shadow-xl overflow-x-auto hide-scrollbar">
+        <div className="bg-darkBlue bg-opacity-20 rounded-xl p-4 h-fit text-white drop-shadow-xl overflow-x-scroll hide-scrollbar">
           <ul className="flex gap-2">
             {filteredForecast.map((hour, index) => {
               const dateTimeUTC = new Date(hour.dt_txt);
@@ -282,7 +282,7 @@ export const TodaysForecast = () => {
               const isHourNight = localHour >= 20 || localHour < 7;
 
               return (
-                <li key={index} className="flex flex-col gap-2 items-center min-w-fill text-center">
+                <li key={index} className="flex-shrink-0 flex flex-col items-center w-fit gap-2 text-center">
                   <p className="whitespace-nowrap">{localHour}</p>
                   <Lottie
                     animationData={animationByWeather(
