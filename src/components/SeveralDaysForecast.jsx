@@ -49,7 +49,7 @@ export const SeveralDaysForecast = () => {
 
   return (
     <div
-    className={`${itIsNight ? "bg-[#000000] text-white" : "bg-white"} w-full transition-all duration-500 fadeIn ease-in-out hide-scrollbar tablet:rounded-b-[2.4rem] font-body ${
+    className={`${itIsNight ? "bg-[#090b0f] text-white" : "bg-white"} w-full transition-all duration-500 fadeIn ease-in-out hide-scrollbar tablet:rounded-b-[2.4rem] font-body ${
       extentionIsVisible ? "h-0 opacity-0" : "h-fit  p-8 py-10 tablet:h-[292px] opacity-100"
     }`}>
     <ul className="flex flex-col gap-2">
@@ -59,7 +59,7 @@ export const SeveralDaysForecast = () => {
         const weekday = weekdays[dayIndex];
 
            return (
-            <li key={index} className={`border-b-2 border-dotted ${itIsNight? "border-darkBlue" : "border-grey"} pb-2 grid grid-cols-3 items-center`}>
+            <li key={index} className={`border-b-2 border-dotted ${itIsNight? "border-gray-800" : "border-grey"} pb-2 grid grid-cols-3 items-center`}>
               <p>{weekday}</p>
               <Lottie
                     animationData={animationByWeather(day.weatherDescription)}
@@ -73,7 +73,7 @@ export const SeveralDaysForecast = () => {
                       day.weatherDescription.includes("rain") && "transform scale-x-[-1]"
                     }`}
                   />
-                  <div className="p-2 px-4 flex bg-gray-400 bg-opacity-20 rounded-xl gap-2 items-center justify-evenly">
+                  <div className="p-2 px-4 flex bg-gray-400 bg-opacity-20 w-[100px] rounded-xl gap-2 items-center justify-evenly">
                  <p>{Math.round(day.minTemp)}°</p> 
                  <div className={`w-[1px] h-[20px] ${itIsNight? "bg-white" : "bg-black"}`}/>
                  <p>{Math.round(day.maxTemp)}°</p>
