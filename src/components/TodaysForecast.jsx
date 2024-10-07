@@ -282,8 +282,8 @@ export const TodaysForecast = () => {
               const isHourNight = localHour >= 20 || localHour < 7;
 
               return (
-                <li key={index} className="flex flex-col gap-2 items-center min-h-[80px]">
-                  <p>{localHour}</p> {/* Display the local hour */}
+                <li key={index} className="flex flex-col gap-2 items-center">
+                  <p className="whitespace-nowrap">{localHour}</p>
                   <Lottie
                     animationData={animationByWeather(
                       hour.weather[0]?.description,
@@ -300,7 +300,7 @@ export const TodaysForecast = () => {
                       "transform scale-x-[-1]"
                     }`}
                   />
-                  <p>{Math.round(hour.main.temp)}°</p>
+                  <p className="whitespace-nowrap">{Math.round(hour.main.temp)}°</p>
                 </li>
               );
             })}
