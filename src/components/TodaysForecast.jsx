@@ -98,46 +98,46 @@ export const TodaysForecast = () => {
           weatherNow === "few clouds" ||
           weatherNow === "scattered clouds"
         ) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728033696/AdobeStock_225117510_kc69ed.mov";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745307950/AdobeStock_225117510_kc69ed_ygnqtx.mov";
         } else if (
           weatherNow === "broken clouds"
         ) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728034271/clouds-night_6_pily9a.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308120/clouds-night_6_pily9a_lnptuj.mp4";
         } else if (
           weatherNow.includes("clouds") ||
           weatherNow.includes("mist")
         ) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728034801/clouds-night_7_dr8nl0.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308122/clouds-night_7_dr8nl0_m5c2ty.mp4";
         } else if (weatherNow.includes("snow")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1728031997/vecteezy_winter-scene-in-cold-night-with-snow-falling-in-4k_1616757_by1jfp.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308216/vecteezy_winter-scene-in-cold-night-with-snow-falling-in-4k_1616757_by1jfp_vfwxx9.mp4";
         } else if (weatherNow.includes("rain")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727983934/nightrain_sa70rc.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308061/nightrain_sa70rc_nvdzxl.mp4";
         } else if (weatherNow.includes("clear")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727983930/fewcloudsnight_rzofg7.mov";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308091/fewcloudsnight_rzofg7_rqtrkb.mov";
         } else if (weatherNow.includes("thunderstorm")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727985190/1449846-hd_1906_1080_28fps_1_rmr10w.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308029/1449846-hd_1906_1080_28fps_1_rmr10w-thunder_b3f4uk.mp4";
         }
       } else {
         if (weatherNow === "few clouds") {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146428/little-clouds_ne5eaw.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308085/little-clouds_ne5eaw_gdbaix.mp4";
         } else if (
           weatherNow === "scattered clouds" ||
           weatherNow === "broken clouds"
         ) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146429/scattered-clouds_hymr9l.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308129/scattered-clouds_hymr9l_vaexvd.mp4";
         } else if (weatherNow.includes("clouds")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146427/broken-clouds_yabiso.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745307885/broken-clouds_yabiso_mswo7d.mp4";
         } else if (weatherNow.includes("clear")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146442/clear_bpyvlj.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745307880/clear_bpyvlj_o8qvag.mp4";
         } else if (weatherNow.includes("snow")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1727981557/snow-day_r8cawa.mp4";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308126/snow-day_r8cawa_lxl6b2.mp4";
         } else if (weatherNow.includes("thunderstorm")) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146452/rain-thunder_pwnr4q.mov";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308251/rain-thunder_pwnr4q_omd7es.mov";
         } else if (
           weatherNow.includes("rain") ||
           weatherNow.includes("drizzle")
         ) {
-          return "https://res.cloudinary.com/dbf8xygxz/video/upload/v1726146440/rain_wgjndm.mov";
+          return "https://res.cloudinary.com/dewmyq6c0/video/upload/v1745308175/rain_wgjndm_t4lzma.mov";
         }
       }
     }
